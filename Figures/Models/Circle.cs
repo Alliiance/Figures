@@ -1,13 +1,13 @@
-using Figures;
 using System.Drawing;
 
-namespace Figures.Models
+namespace FiguressProgram.Models
 {
     class Circle : Figures
     {
         public Circle(int x, int y, int width,int height, Direction dirX, Direction dirY) 
             : base(x, y, width, height, dirX, dirY)
-        { }
+        {
+        }
 
         public override void Draw(Graphics graphics)
         {

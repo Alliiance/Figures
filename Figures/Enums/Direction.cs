@@ -1,4 +1,4 @@
-﻿namespace Figures.Models
+namespace FiguressProgram.Models
 {
     enum Direction
     {
