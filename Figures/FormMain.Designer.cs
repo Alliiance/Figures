@@ -46,7 +46,7 @@ namespace FiguressProgram
             this.panel1.Controls.Add(this.AddRectangle);
             this.panel1.Controls.Add(this.AddCircle);
             this.panel1.Location = new System.Drawing.Point(77, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(523, 58);
             this.panel1.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace FiguressProgram
             this.AddTriangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddTriangle.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.AddTriangle.Location = new System.Drawing.Point(387, 11);
-            this.AddTriangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddTriangle.Margin = new System.Windows.Forms.Padding(2);
             this.AddTriangle.Name = "AddTriangle";
             this.AddTriangle.Size = new System.Drawing.Size(86, 32);
             this.AddTriangle.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace FiguressProgram
             this.AddRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddRectangle.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.AddRectangle.Location = new System.Drawing.Point(230, 11);
-            this.AddRectangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddRectangle.Margin = new System.Windows.Forms.Padding(2);
             this.AddRectangle.Name = "AddRectangle";
             this.AddRectangle.Size = new System.Drawing.Size(86, 32);
             this.AddRectangle.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace FiguressProgram
             this.AddCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddCircle.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.AddCircle.Location = new System.Drawing.Point(58, 11);
-            this.AddCircle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddCircle.Margin = new System.Windows.Forms.Padding(2);
             this.AddCircle.Name = "AddCircle";
             this.AddCircle.Size = new System.Drawing.Size(86, 32);
             this.AddCircle.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace FiguressProgram
             // treeView
             // 
             this.treeView.Location = new System.Drawing.Point(-1, 2);
-            this.treeView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.treeView.Margin = new System.Windows.Forms.Padding(2);
             this.treeView.Name = "treeView";
             this.treeView.Size = new System.Drawing.Size(79, 359);
             this.treeView.TabIndex = 1;
@@ -115,7 +115,7 @@ namespace FiguressProgram
             // 
             this.pictureBoxFigure.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBoxFigure.Location = new System.Drawing.Point(82, 64);
-            this.pictureBoxFigure.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxFigure.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxFigure.Name = "pictureBoxFigure";
             this.pictureBoxFigure.Size = new System.Drawing.Size(518, 295);
             this.pictureBoxFigure.TabIndex = 2;
@@ -131,7 +131,7 @@ namespace FiguressProgram
             this.Controls.Add(this.treeView);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FiguresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figures";

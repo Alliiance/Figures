@@ -2,6 +2,7 @@ using FiguressProgram.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -13,7 +14,6 @@ namespace FiguressProgram
     {
         Graphics graphics;
         List<Figures> figures = new List<Figures>();
-        TreeNode node;
         public FiguresForm()
         {
             InitializeComponent();
@@ -25,9 +25,7 @@ namespace FiguressProgram
             Circle circle = new Circle(30, 30, 100, 100, Direction.Left, Direction.Top);
             circle.Draw(graphics);
             figures.Add(circle);
-
-            node = new TreeNode("Circle");
-            treeView.Nodes.Add(node);
+            AddTtreeView("Circle");
         }
 
         private void AddRectangle_Click(object sender, EventArgs e)
@@ -39,5 +37,18 @@ namespace FiguressProgram
         {
 
         }
+
+        private void AddTtreeView(string name)
+        {
+            TreeNode newNode = new TreeNode(name);
+            TreeNode node = treeView.Nodes.OfType<TreeNode>()
+                            .FirstOrDefault(x => x.Text.Equals("Circle"));
+
+            if (node == null)
+                treeView.Nodes.Add(newNode);
+            else
+                node.Nodes.Add(newNode);
+        }
+
     }
 }
