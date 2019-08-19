@@ -5,15 +5,13 @@ namespace Figures.Models
 {
     class Circle : Figures
     {
-        Point point;
-        public Circle(Point point)
-        {
-           this.point = point;
-        }
+        public Circle(int x, int y, int width,int height, Direction dirX, Direction dirY) 
+            : base(x, y, width, height, dirX, dirY)
+        { }
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawEllipse(Pens.Red, point.x, point.y, point.width, point.height);
+            graphics.DrawEllipse(Pens.Red, x, y, width, height);
         }
 
         public override void Move()
