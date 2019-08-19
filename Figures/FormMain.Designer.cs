@@ -35,9 +35,9 @@ namespace Figures
             this.AddCircle = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFigure = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,30 +105,30 @@ namespace Figures
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
-            // pictureBox11
+            // pictureBoxFigure
             // 
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox11.Location = new System.Drawing.Point(109, 79);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(690, 363);
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
+            this.pictureBoxFigure.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBoxFigure.Location = new System.Drawing.Point(109, 79);
+            this.pictureBoxFigure.Name = "pictureBoxFigure";
+            this.pictureBoxFigure.Size = new System.Drawing.Size(690, 363);
+            this.pictureBoxFigure.TabIndex = 2;
+            this.pictureBoxFigure.TabStop = false;
             // 
-            // Figures
+            // FiguresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 475);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBoxFigure);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Figures";
+            this.Name = "FiguresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figures";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,8 +141,8 @@ namespace Figures
         private System.Windows.Forms.Button AddRectangle;
         private System.Windows.Forms.Button AddCircle;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.PictureBox pictureBoxFigure;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }
 
