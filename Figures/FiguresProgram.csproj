@@ -55,6 +55,8 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Enums\Direction.cs" />
     <Compile Include="Models\Figures.cs" />
+    <Compile Include="Models\Rectangle.cs" />
+    <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">

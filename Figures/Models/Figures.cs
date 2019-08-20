@@ -21,9 +21,39 @@ namespace FiguressProgram.Models
         protected Direction dirX { get; set; }
         protected Direction dirY { get; set; }
 
-        abstract public void Move();
+        abstract public void Draw(Graphics graphics);
 
-        abstract public void Draw(Graphics g);
+        public virtual void Move(int pictureWidth, int pictureHeight)
+        {
+            if (x == 0)
+                dirX = Direction.Right;
+            if (x >= pictureWidth - width)
+                dirX = Direction.Left;
 
+            switch (dirX)
+            {
+                case Direction.Right:
+                    x++;
+                    break;
+                case Direction.Left:
+                    x--;
+                    break;
+            }
+
+            if (y == 0)
+                dirY = Direction.Bottom;
+            if (y >= pictureHeight - height)
+                dirY = Direction.Top;
+
+            switch (dirY)
+            {
+                case Direction.Top:
+                    y--;
+                    break;
+                case Direction.Bottom:
+                    y++;
+                    break;
+            }
+        }
     }
 }
