@@ -4,6 +4,13 @@ namespace FiguressProgram.Models
 {
     abstract class Figures
     {
+        protected int x;
+        protected int y;
+        protected int width;
+        protected int height;
+        protected Direction dirX;
+        protected Direction dirY;
+
         public Figures(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             this.x = x;
@@ -13,13 +20,6 @@ namespace FiguressProgram.Models
             this.dirX = dirX;
             this.dirY = dirY;
         }
-
-        protected int x { get; set; }
-        protected int y { get; set; }
-        protected int width { get; set; }
-        protected int height { get; set; }
-        protected Direction dirX { get; set; }
-        protected Direction dirY { get; set; }
 
         abstract public void Draw(Graphics graphics);
 

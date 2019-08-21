@@ -37,6 +37,9 @@ namespace FiguressProgram
             this.treeView = new System.Windows.Forms.TreeView();
             this.pictureBoxFigure = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.StopFigure = new System.Windows.Forms.Button();
+            this.RunFigure = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +47,9 @@ namespace FiguressProgram
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.RunFigure);
+            this.panel1.Controls.Add(this.StopFigure);
             this.panel1.Controls.Add(this.AddTriangle);
             this.panel1.Controls.Add(this.AddRectangle);
             this.panel1.Controls.Add(this.AddCircle);
@@ -58,7 +64,7 @@ namespace FiguressProgram
             this.AddTriangle.BackColor = System.Drawing.Color.Green;
             this.AddTriangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddTriangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddTriangle.Location = new System.Drawing.Point(516, 14);
+            this.AddTriangle.Location = new System.Drawing.Point(254, 14);
             this.AddTriangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddTriangle.Name = "AddTriangle";
             this.AddTriangle.Size = new System.Drawing.Size(115, 39);
@@ -72,7 +78,7 @@ namespace FiguressProgram
             this.AddRectangle.BackColor = System.Drawing.Color.LightCoral;
             this.AddRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddRectangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddRectangle.Location = new System.Drawing.Point(293, 14);
+            this.AddRectangle.Location = new System.Drawing.Point(133, 14);
             this.AddRectangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddRectangle.Name = "AddRectangle";
             this.AddRectangle.Size = new System.Drawing.Size(115, 39);
@@ -86,7 +92,7 @@ namespace FiguressProgram
             this.AddCircle.BackColor = System.Drawing.SystemColors.Highlight;
             this.AddCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddCircle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddCircle.Location = new System.Drawing.Point(77, 14);
+            this.AddCircle.Location = new System.Drawing.Point(12, 14);
             this.AddCircle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddCircle.Name = "AddCircle";
             this.AddCircle.Size = new System.Drawing.Size(115, 39);
@@ -122,6 +128,37 @@ namespace FiguressProgram
             this.timer.Interval = 5;
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // StopFigure
+            // 
+            this.StopFigure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopFigure.Location = new System.Drawing.Point(376, 4);
+            this.StopFigure.Name = "StopFigure";
+            this.StopFigure.Size = new System.Drawing.Size(60, 28);
+            this.StopFigure.TabIndex = 3;
+            this.StopFigure.Text = "Stop";
+            this.StopFigure.UseVisualStyleBackColor = true;
+            this.StopFigure.Click += new System.EventHandler(this.StopFigure_Click);
+            // 
+            // RunFigure
+            // 
+            this.RunFigure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RunFigure.Location = new System.Drawing.Point(376, 39);
+            this.RunFigure.Name = "RunFigure";
+            this.RunFigure.Size = new System.Drawing.Size(60, 28);
+            this.RunFigure.TabIndex = 4;
+            this.RunFigure.Text = "Run";
+            this.RunFigure.UseVisualStyleBackColor = true;
+            this.RunFigure.Click += new System.EventHandler(this.RunFigure_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(494, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
             // FiguresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -136,6 +173,7 @@ namespace FiguressProgram
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figures";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).EndInit();
             this.ResumeLayout(false);
 
@@ -150,6 +188,9 @@ namespace FiguressProgram
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.PictureBox pictureBoxFigure;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button RunFigure;
+        private System.Windows.Forms.Button StopFigure;
+        private System.Windows.Forms.Label label1;
     }
 }
 

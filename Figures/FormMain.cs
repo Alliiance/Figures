@@ -18,10 +18,11 @@ namespace FiguressProgram
 
         public FiguresForm()
         {
-
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
+            treeView.CheckBoxes = true;
+
         }
 
         private void PictureBoxFigure_Paint(object sender, PaintEventArgs e)
@@ -57,19 +58,46 @@ namespace FiguressProgram
 
         private void AddTtreeView(string name)
         {
-            TreeNode newNode = new TreeNode(name);
+
+            //TreeNode newNode = new TreeNode(name);
+            //TreeNode node = treeView.Nodes.OfType<TreeNode>()
+            //                .FirstOrDefault(x => x.Text.Equals(name));
+            //if (node == null)
+            //    treeView.Nodes.Add(newNode);
+            //else
+            //    node.Nodes.Add(newNode);
+
+            TreeNode newNode = new TreeNode(name);          
             TreeNode node = treeView.Nodes.OfType<TreeNode>()
-                            .FirstOrDefault(x => x.Text.Equals(name));
+                .FirstOrDefault(x => x.Text.Equals($"All: {name}"));
 
             if (node == null)
-                treeView.Nodes.Add(newNode);
-            else
-                node.Nodes.Add(newNode);
+                treeView.Nodes.Add($"All: {name}");
+
+            TreeNode createNode = treeView.Nodes.OfType<TreeNode>()
+                .FirstOrDefault(x => x.Text.Equals($"All: {name}"));
+            createNode.Nodes.Add(newNode);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
            pictureBoxFigure.Refresh();          
+        }
+
+        private void StopFigure_Click(object sender, EventArgs e)
+        {
+            foreach (TreeNode item in treeView.Nodes)
+            {
+                if (item.Checked)
+                {
+                    label1.Text = "Сработало";
+                }
+            }
+        }
+
+        private void RunFigure_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
