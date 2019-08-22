@@ -2,7 +2,7 @@ using System.Drawing;
 
 namespace FiguressProgram.Models
 {
-    abstract class Figures
+    abstract class Figure
     {
         protected int x;
         protected int y;
@@ -11,7 +11,7 @@ namespace FiguressProgram.Models
         protected Direction dirX;
         protected Direction dirY;
 
-        public Figures(int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public Figure(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             this.x = x;
             this.y = y;

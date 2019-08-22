@@ -2,7 +2,7 @@ using System.Drawing;
 
 namespace FiguressProgram.Models
 {
-    class Triangle : Figures
+    class Triangle : Figure
     {
         public Triangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
             : base(x, y, width, height, dirX, dirY)

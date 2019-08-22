@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8E3F5A1D-8509-41CB-BAF2-F039B92B8D8A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Figures</RootNamespace>
-    <AssemblyName>Figures</AssemblyName>
+    <RootNamespace>FiguresProgram</RootNamespace>
+    <AssemblyName>FiguresProgram</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\FigureEnum.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,9 +54,9 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Circle.cs" />
-    <Compile Include="Enums\Direction.cs" />
-    <Compile Include="Models\Figures.cs" />
-    <Compile Include="Models\Rectangles.cs" />
+    <Compile Include="Enums\DirectionEnum.cs" />
+    <Compile Include="Models\Figure.cs" />
+    <Compile Include="Models\Rectangle.cs" />
     <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

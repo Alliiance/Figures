@@ -2,7 +2,7 @@ using System.Drawing;
 
 namespace FiguressProgram.Models
 {
-    class Circle : Figures
+    class Circle : Figure
     {
         public Circle(int x, int y, int width,int height, Direction dirX, Direction dirY) 
             : base(x, y, width, height, dirX, dirY)

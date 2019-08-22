@@ -2,9 +2,9 @@ using System.Drawing;
 
 namespace FiguressProgram.Models
 {
-    class Rectangles : Figures
+    class Rectangle : Figure
     {
-        public Rectangles(int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public Rectangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
             : base(x, y, width, height, dirX, dirY)
         {
         }

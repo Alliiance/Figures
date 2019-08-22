@@ -1,3 +1,4 @@
+using Figures.Enums;
 using FiguressProgram.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace FiguressProgram
     public partial class FiguresForm : Form
     {
         Graphics graphics;
-        List<Figures> figures = new List<Figures>();
+        List<Figure> figures = new List<Figure>();
         int pictureBoxWidth;
         int pictureBoxHeight;
 
@@ -21,14 +22,19 @@ namespace FiguressProgram
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
+
             treeView.CheckBoxes = true;
+            foreach (FigureEnum figure in Enum.GetValues(typeof(FigureEnum)))
+            {
+                treeView.Nodes.Add($"All: {figure.ToString()}");
+            }
 
         }
 
         private void PictureBoxFigure_Paint(object sender, PaintEventArgs e)
         {
             graphics = e.Graphics;
-            foreach (Figures figure in figures)
+            foreach (Figure figure in figures)
             {
                 figure.Move(pictureBoxWidth, pictureBoxHeight);
                 figure.Draw(graphics);
@@ -39,44 +45,32 @@ namespace FiguressProgram
         {
             Circle circle = new Circle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures.Add(circle);
-            AddTtreeView("Circle");
+            AddTtreeView(FigureEnum.Circle.ToString());
         }
 
         private void AddRectangle_Click(object sender, EventArgs e)
         {
-            Rectangles rectangle = new Rectangles(220, 100, 50, 50, Direction.Left, Direction.Bottom);
+            Models.Rectangle rectangle = new Models.Rectangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures.Add(rectangle);
-            AddTtreeView("Rectangle");
+            AddTtreeView(FigureEnum.Rectangle.ToString());
         }
 
         private void AddTriangle_Click(object sender, EventArgs e)
         {
             Triangle triangle = new Triangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures.Add(triangle);
-            AddTtreeView("Triangle");
+            AddTtreeView(FigureEnum.Triangle.ToString());
         }
 
         private void AddTtreeView(string name)
         {
-
-            //TreeNode newNode = new TreeNode(name);
-            //TreeNode node = treeView.Nodes.OfType<TreeNode>()
-            //                .FirstOrDefault(x => x.Text.Equals(name));
-            //if (node == null)
-            //    treeView.Nodes.Add(newNode);
-            //else
-            //    node.Nodes.Add(newNode);
-
-            TreeNode newNode = new TreeNode(name);          
-            TreeNode node = treeView.Nodes.OfType<TreeNode>()
-                .FirstOrDefault(x => x.Text.Equals($"All: {name}"));
-
-            if (node == null)
-                treeView.Nodes.Add($"All: {name}");
+            TreeNode newNode = new TreeNode(name);
 
             TreeNode createNode = treeView.Nodes.OfType<TreeNode>()
                 .FirstOrDefault(x => x.Text.Equals($"All: {name}"));
-            createNode.Nodes.Add(newNode);
+
+            if(createNode != null)
+               createNode.Nodes.Add(newNode);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
