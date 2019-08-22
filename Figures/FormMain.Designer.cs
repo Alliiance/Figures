@@ -31,7 +31,6 @@ namespace FiguressProgram
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiguresForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.RunFigure = new System.Windows.Forms.Button();
             this.StopFigure = new System.Windows.Forms.Button();
             this.AddTriangle = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@ namespace FiguressProgram
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.RunFigure);
             this.panel1.Controls.Add(this.StopFigure);
             this.panel1.Controls.Add(this.AddTriangle);
@@ -58,15 +56,6 @@ namespace FiguressProgram
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 71);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
             // 
             // RunFigure
             // 
@@ -145,6 +134,9 @@ namespace FiguressProgram
             // 
             // pictureBoxFigure
             // 
+            this.pictureBoxFigure.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxFigure.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBoxFigure.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBoxFigure.Location = new System.Drawing.Point(168, 97);
@@ -174,8 +166,8 @@ namespace FiguressProgram
             this.Name = "FiguresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figures";
+            this.Resize += new System.EventHandler(this.FiguresForm_Resize);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).EndInit();
             this.ResumeLayout(false);
 
@@ -192,7 +184,6 @@ namespace FiguressProgram
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button RunFigure;
         private System.Windows.Forms.Button StopFigure;
-        private System.Windows.Forms.Label label1;
     }
 }
 

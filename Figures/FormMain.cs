@@ -27,12 +27,10 @@ namespace FiguressProgram
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
-
             foreach (FigureEnum figure in Enum.GetValues(typeof(FigureEnum)))
             {
                 treeView.Nodes.Add($"All {figure.ToString()}:");
             }
-
         }
 
         private void PictureBoxFigure_Paint(object sender, PaintEventArgs e)
@@ -77,14 +75,7 @@ namespace FiguressProgram
                 .FirstOrDefault(x => x.Text.Equals($"All {name}:"));
 
             if(createNode != null)
-            {
                 createNode.Nodes.Add(newNode);
-                treeView.Nodes.OfType<TreeNode>()
-                   .FirstOrDefault(x => x.Text.Equals($"All {name}:")).Expand();
-            }
-
-
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -124,6 +115,11 @@ namespace FiguressProgram
                 Node.Nodes[i].Checked = Node.Checked;
                 treeViewChangeCheckBox(Node.Nodes[i]);
             }
+        }
+        private void FiguresForm_Resize(object sender, EventArgs e)
+        {
+            pictureBoxWidth = pictureBoxFigure.Size.Width;
+            pictureBoxHeight = pictureBoxFigure.Size.Height;
         }
     }
 }
