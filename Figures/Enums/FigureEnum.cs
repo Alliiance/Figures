@@ -10,6 +10,6 @@ namespace Figures.Enums
     {
         Circle,
         Rectangle,
-        Triangle
+        Triangle,
     }
 }

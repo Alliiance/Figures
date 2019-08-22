@@ -31,15 +31,15 @@ namespace FiguressProgram
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiguresForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RunFigure = new System.Windows.Forms.Button();
+            this.StopFigure = new System.Windows.Forms.Button();
             this.AddTriangle = new System.Windows.Forms.Button();
             this.AddRectangle = new System.Windows.Forms.Button();
             this.AddCircle = new System.Windows.Forms.Button();
             this.treeView = new System.Windows.Forms.TreeView();
             this.pictureBoxFigure = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.StopFigure = new System.Windows.Forms.Button();
-            this.RunFigure = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,37 @@ namespace FiguressProgram
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 71);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(494, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // RunFigure
+            // 
+            this.RunFigure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RunFigure.Location = new System.Drawing.Point(376, 39);
+            this.RunFigure.Name = "RunFigure";
+            this.RunFigure.Size = new System.Drawing.Size(60, 28);
+            this.RunFigure.TabIndex = 4;
+            this.RunFigure.Text = "Run";
+            this.RunFigure.UseVisualStyleBackColor = true;
+            this.RunFigure.Click += new System.EventHandler(this.RunFigure_Click);
+            // 
+            // StopFigure
+            // 
+            this.StopFigure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopFigure.Location = new System.Drawing.Point(376, 4);
+            this.StopFigure.Name = "StopFigure";
+            this.StopFigure.Size = new System.Drawing.Size(60, 28);
+            this.StopFigure.TabIndex = 3;
+            this.StopFigure.Text = "Stop";
+            this.StopFigure.UseVisualStyleBackColor = true;
+            this.StopFigure.Click += new System.EventHandler(this.StopFigure_Click);
             // 
             // AddTriangle
             // 
@@ -104,11 +135,13 @@ namespace FiguressProgram
             // treeView
             // 
             this.treeView.BackColor = System.Drawing.Color.SeaShell;
+            this.treeView.CheckBoxes = true;
             this.treeView.Location = new System.Drawing.Point(12, 11);
             this.treeView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(137, 453);
+            this.treeView.Size = new System.Drawing.Size(150, 453);
             this.treeView.TabIndex = 1;
+            this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseClick);
             // 
             // pictureBoxFigure
             // 
@@ -127,37 +160,6 @@ namespace FiguressProgram
             this.timer.Enabled = true;
             this.timer.Interval = 5;
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // StopFigure
-            // 
-            this.StopFigure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StopFigure.Location = new System.Drawing.Point(376, 4);
-            this.StopFigure.Name = "StopFigure";
-            this.StopFigure.Size = new System.Drawing.Size(60, 28);
-            this.StopFigure.TabIndex = 3;
-            this.StopFigure.Text = "Stop";
-            this.StopFigure.UseVisualStyleBackColor = true;
-            this.StopFigure.Click += new System.EventHandler(this.StopFigure_Click);
-            // 
-            // RunFigure
-            // 
-            this.RunFigure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RunFigure.Location = new System.Drawing.Point(376, 39);
-            this.RunFigure.Name = "RunFigure";
-            this.RunFigure.Size = new System.Drawing.Size(60, 28);
-            this.RunFigure.TabIndex = 4;
-            this.RunFigure.Text = "Run";
-            this.RunFigure.UseVisualStyleBackColor = true;
-            this.RunFigure.Click += new System.EventHandler(this.RunFigure_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
             // 
             // FiguresForm
             // 

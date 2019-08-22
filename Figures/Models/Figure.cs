@@ -10,6 +10,7 @@ namespace FiguressProgram.Models
         protected int height;
         protected Direction dirX;
         protected Direction dirY;
+        private bool condition;
 
         public Figure(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
@@ -19,40 +20,49 @@ namespace FiguressProgram.Models
             this.height = height;
             this.dirX = dirX;
             this.dirY = dirY;
+            condition = true;
+        }
+        public  bool Condition {
+            get { return condition; }
+            set { condition = value; }
         }
 
         abstract public void Draw(Graphics graphics);
 
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
-            if (x == 0)
-                dirX = Direction.Right;
-            if (x >= pictureWidth - width)
-                dirX = Direction.Left;
-
-            switch (dirX)
+            if (condition)
             {
-                case Direction.Right:
-                    x++;
-                    break;
-                case Direction.Left:
-                    x--;
-                    break;
-            }
+                if (x == 0)
+                    dirX = Direction.Right;
+                if (x >= pictureWidth - width)
+                    dirX = Direction.Left;
 
-            if (y == 0)
-                dirY = Direction.Bottom;
-            if (y >= pictureHeight - height)
-                dirY = Direction.Top;
+                switch (dirX)
+                {
+                    case Direction.Right:
+                        x++;
+                        break;
+                    case Direction.Left:
+                        x--;
+                        break;
+                }
 
-            switch (dirY)
-            {
-                case Direction.Top:
-                    y--;
-                    break;
-                case Direction.Bottom:
-                    y++;
-                    break;
+                if (y == 0)
+                    dirY = Direction.Bottom;
+                if (y >= pictureHeight - height)
+                    dirY = Direction.Top;
+
+
+                switch (dirY)
+                {
+                    case Direction.Top:
+                        y--;
+                        break;
+                    case Direction.Bottom:
+                        y++;
+                        break;
+                }
             }
         }
     }
