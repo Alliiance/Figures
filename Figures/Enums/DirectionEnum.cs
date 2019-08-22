@@ -1,6 +1,6 @@
-namespace FiguressProgram.Models
+namespace FiguresProgram.Models
 {
-    enum Direction
+    public enum Direction
     {
         Top,
         Right,

@@ -1,13 +1,15 @@
 using Figures.Enums;
-using FiguressProgram.Models;
+using FiguresProgram.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
-
-namespace FiguressProgram
+namespace FiguresProgram
 {
     
     public partial class FiguresForm : Form
@@ -19,6 +21,8 @@ namespace FiguressProgram
               new List<Figure>(),
               new List<Figure>()
         };
+
+
         int pictureBoxWidth;
         int pictureBoxHeight;
 
@@ -120,6 +124,36 @@ namespace FiguressProgram
         {
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
+        }
+
+        private void BinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label1.Text = "SDASD";
+        }
+
+        private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Figure>));
+                using (FileStream fs = new FileStream("SaveFiles/Figures.xml", FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fs, figures);
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+        }
+
+        private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

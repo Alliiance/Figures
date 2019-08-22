@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace FiguressProgram.Models
+namespace FiguresProgram.Models
 {
     class Rectangle : Figure
     {

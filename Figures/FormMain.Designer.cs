@@ -1,4 +1,4 @@
-namespace FiguressProgram
+namespace FiguresProgram
 {
     partial class FiguresForm
     {
@@ -31,52 +31,74 @@ namespace FiguressProgram
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiguresForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.RunFigure = new System.Windows.Forms.Button();
             this.StopFigure = new System.Windows.Forms.Button();
             this.AddTriangle = new System.Windows.Forms.Button();
             this.AddRectangle = new System.Windows.Forms.Button();
             this.AddCircle = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView = new System.Windows.Forms.TreeView();
             this.pictureBoxFigure = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.RunFigure);
             this.panel1.Controls.Add(this.StopFigure);
             this.panel1.Controls.Add(this.AddTriangle);
             this.panel1.Controls.Add(this.AddRectangle);
             this.panel1.Controls.Add(this.AddCircle);
+            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(168, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 71);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(565, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
             // RunFigure
             // 
+            this.RunFigure.BackColor = System.Drawing.Color.GreenYellow;
             this.RunFigure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RunFigure.Location = new System.Drawing.Point(376, 39);
+            this.RunFigure.Location = new System.Drawing.Point(366, 3);
             this.RunFigure.Name = "RunFigure";
             this.RunFigure.Size = new System.Drawing.Size(60, 28);
             this.RunFigure.TabIndex = 4;
             this.RunFigure.Text = "Run";
-            this.RunFigure.UseVisualStyleBackColor = true;
+            this.RunFigure.UseVisualStyleBackColor = false;
             this.RunFigure.Click += new System.EventHandler(this.RunFigure_Click);
             // 
             // StopFigure
             // 
+            this.StopFigure.BackColor = System.Drawing.Color.Crimson;
             this.StopFigure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StopFigure.Location = new System.Drawing.Point(376, 4);
+            this.StopFigure.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.StopFigure.Location = new System.Drawing.Point(366, 37);
             this.StopFigure.Name = "StopFigure";
             this.StopFigure.Size = new System.Drawing.Size(60, 28);
             this.StopFigure.TabIndex = 3;
             this.StopFigure.Text = "Stop";
-            this.StopFigure.UseVisualStyleBackColor = true;
+            this.StopFigure.UseVisualStyleBackColor = false;
             this.StopFigure.Click += new System.EventHandler(this.StopFigure_Click);
             // 
             // AddTriangle
@@ -84,7 +106,7 @@ namespace FiguressProgram
             this.AddTriangle.BackColor = System.Drawing.Color.Green;
             this.AddTriangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddTriangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddTriangle.Location = new System.Drawing.Point(254, 14);
+            this.AddTriangle.Location = new System.Drawing.Point(245, 14);
             this.AddTriangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddTriangle.Name = "AddTriangle";
             this.AddTriangle.Size = new System.Drawing.Size(115, 39);
@@ -98,7 +120,7 @@ namespace FiguressProgram
             this.AddRectangle.BackColor = System.Drawing.Color.LightCoral;
             this.AddRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddRectangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddRectangle.Location = new System.Drawing.Point(133, 14);
+            this.AddRectangle.Location = new System.Drawing.Point(124, 14);
             this.AddRectangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddRectangle.Name = "AddRectangle";
             this.AddRectangle.Size = new System.Drawing.Size(115, 39);
@@ -112,7 +134,7 @@ namespace FiguressProgram
             this.AddCircle.BackColor = System.Drawing.SystemColors.Highlight;
             this.AddCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddCircle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddCircle.Location = new System.Drawing.Point(12, 14);
+            this.AddCircle.Location = new System.Drawing.Point(3, 14);
             this.AddCircle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddCircle.Name = "AddCircle";
             this.AddCircle.Size = new System.Drawing.Size(115, 39);
@@ -120,6 +142,59 @@ namespace FiguressProgram
             this.AddCircle.Text = "Add circle";
             this.AddCircle.UseVisualStyleBackColor = false;
             this.AddCircle.Click += new System.EventHandler(this.AddCircle_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(429, 14);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(204, 28);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Orange;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.binToolStripMenuItem,
+            this.xMLToolStripMenuItem,
+            this.jSONToolStripMenuItem});
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // binToolStripMenuItem
+            // 
+            this.binToolStripMenuItem.Name = "binToolStripMenuItem";
+            this.binToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.binToolStripMenuItem.Text = ".Bin";
+            this.binToolStripMenuItem.Click += new System.EventHandler(this.BinToolStripMenuItem_Click);
+            // 
+            // xMLToolStripMenuItem
+            // 
+            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xMLToolStripMenuItem.Text = ".XML";
+            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.XMLToolStripMenuItem_Click);
+            // 
+            // jSONToolStripMenuItem
+            // 
+            this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jSONToolStripMenuItem.Text = ".JSON";
+            this.jSONToolStripMenuItem.Click += new System.EventHandler(this.JSONToolStripMenuItem_Click);
             // 
             // treeView
             // 
@@ -162,12 +237,16 @@ namespace FiguressProgram
             this.Controls.Add(this.treeView);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FiguresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figures";
             this.Resize += new System.EventHandler(this.FiguresForm_Resize);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).EndInit();
             this.ResumeLayout(false);
 
@@ -184,6 +263,13 @@ namespace FiguressProgram
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button RunFigure;
         private System.Windows.Forms.Button StopFigure;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

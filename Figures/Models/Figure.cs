@@ -1,8 +1,8 @@
 using System.Drawing;
 
-namespace FiguressProgram.Models
+namespace FiguresProgram.Models
 {
-    abstract class Figure
+    public abstract class Figure
     {
         protected int x;
         protected int y;

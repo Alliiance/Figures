@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 
 
-namespace FiguressProgram
+namespace FiguresProgram
 {
     static class Program
     {
