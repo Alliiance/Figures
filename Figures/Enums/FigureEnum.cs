@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Figures.Enums
+namespace FiguresProgram.Enums
 {
     public enum FigureEnum
     {

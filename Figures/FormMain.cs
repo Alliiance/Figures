@@ -1,21 +1,27 @@
-using Figures.Enums;
+using FiguresProgram.Enums;
+using FiguresProgram.FileResoursec;
 using FiguresProgram.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+
 
 namespace FiguresProgram
 {
     
     public partial class FiguresForm : Form
     {
+        bool isFormLoaded = false;
+
         Graphics graphics;
-        List<Figure>[] figures = new List<Figure>[]
+        List<List<Figure>> figures = new List<List<Figure>>
         {
               new List<Figure>(),
               new List<Figure>(),
@@ -28,6 +34,11 @@ namespace FiguresProgram
 
         public FiguresForm()
         {
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language))
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
+            }
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
@@ -35,12 +46,16 @@ namespace FiguresProgram
             {
                 treeView.Nodes.Add($"All {figure.ToString()}:");
             }
+            button1.Text = Strings.LanguageBtn;
+
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-us");
+
         }
 
         private void PictureBoxFigure_Paint(object sender, PaintEventArgs e)
         {
             graphics = e.Graphics;
-            for (int i = 0; i < figures.Length; i++)
+            for (int i = 0; i < figures.Count; i++)
             {
                 foreach (Figure figure in figures[i])
                 {
@@ -128,32 +143,55 @@ namespace FiguresProgram
 
         private void BinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text = "SDASD";
+            
         }
 
         private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            try
-            {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<Figure>));
-                using (FileStream fs = new FileStream("SaveFiles/Figures.xml", FileMode.OpenOrCreate))
+            XmlSerializer formatter = new XmlSerializer(typeof(List<List<Figure>>));
+                using (FileStream fs = new FileStream("Figures.xml", FileMode.OpenOrCreate))
                 {
                     formatter.Serialize(fs, figures);
                 }
-            }
-            catch (Exception)
-            {
-
-
-            }
-
         }
 
         private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FiguresForm_Load(object sender, EventArgs e)
+        {
+            comboBoxLanguage.DataSource = new CultureInfo[]
+            {
+                CultureInfo.GetCultureInfo("ru-RU"),
+                CultureInfo.GetCultureInfo("en-US")
+            };
+
+            comboBoxLanguage.DisplayMember = "NativeName";
+            comboBoxLanguage.ValueMember = "Name";
+
+            if (!String.IsNullOrEmpty(Properties.Settings.Default.Language))
+            {
+                comboBoxLanguage.SelectedValue = Properties.Settings.Default.Language;
+            }
+
+            isFormLoaded = true;
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFormLoaded)
+            {
+                Properties.Settings.Default.Language = comboBoxLanguage.SelectedValue.ToString();
+                Properties.Settings.Default.Save();
+                Application.Restart();
+            }
         }
     }
 }
