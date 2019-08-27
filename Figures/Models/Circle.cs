@@ -3,10 +3,11 @@ using System.Drawing;
 
 namespace FiguresProgram.Models
 {
-
     [Serializable]
     public class Circle : Figure
     {
+        public Circle() { }
+
         public Circle(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             X = x;
@@ -16,11 +17,6 @@ namespace FiguresProgram.Models
             DirX = dirX;
             DirY = dirY;
             Condition = true;
-        }
-
-        public Circle()
-        {
-
         }
 
         public override void Draw(Graphics graphics)

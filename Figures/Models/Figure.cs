@@ -15,95 +15,60 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
-        private int x, y, width, height;
-
-        private Direction dirX, dirY;
-
-        private bool condition;
+        [DataMember]
+        public int X { get; set; }
 
         [DataMember]
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
+        public int Y { get; set; }
 
         [DataMember]
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
-        }
+        public int Width { get; set; }
 
         [DataMember]
-        public int Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
+        public int Height { get; set; }
 
         [DataMember]
-        public int Height
-        {
-            get { return height; }
-            set { height = value; }
-        }
+        public Direction DirX { get; set; }
+        [DataMember]
+        public Direction DirY { get; set; }
 
         [DataMember]
-        public Direction DirX
-        {
-            get { return dirX; }
-            set { dirX = value; }
-        }
-        [DataMember]
-        public Direction DirY
-        {
-            get { return dirY; }
-            set { dirY = value; }
-        }
-
-        [DataMember]
-        public bool Condition
-        {
-            get { return condition; }
-            set { condition = value; }
-        }
-
+        public bool Condition { get; set; }
 
         abstract public void Draw(Graphics graphics);
 
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
-            if (condition)
+            if (Condition)
             {
-                if (x == 0)
-                    dirX = Direction.Right;
-                if (x >= pictureWidth - width)
-                    dirX = Direction.Left;
+                if (X == 0)
+                    DirX = Direction.Right;
+                if (X >= pictureWidth - Width)
+                    DirX = Direction.Left;
 
-                switch (dirX)
+                switch (DirX)
                 {
                     case Direction.Right:
-                        x++;
+                        X++;
                         break;
                     case Direction.Left:
-                        x--;
+                        X--;
                         break;
                 }
 
-                if (y == 0)
-                    dirY = Direction.Bottom;
-                if (y >= pictureHeight - height)
-                    dirY = Direction.Top;
+                if (Y == 0)
+                    DirY = Direction.Bottom;
+                if (Y >= pictureHeight - Height)
+                    DirY = Direction.Top;
 
 
-                switch (dirY)
+                switch (DirY)
                 {
                     case Direction.Top:
-                        y--;
+                        Y--;
                         break;
                     case Direction.Bottom:
-                        y++;
+                        Y++;
                         break;
                 }
             }

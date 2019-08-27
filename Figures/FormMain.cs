@@ -36,9 +36,6 @@ namespace FiguresProgram
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
-
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-us");
-
         }
 
         #region Add figure
@@ -191,10 +188,10 @@ namespace FiguresProgram
             XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            string filePath = "SerializerFile/";
-            string xmlFileName = "Figures.xml";
-            string jsonFileName = "Figures.json";
-            string binaryFileName = "Figures.dat";
+            readonly string filePath = "SerializerFile/";
+            readonly string xmlFileName = "Figures.xml";
+            readonly string jsonFileName = "Figures.json";
+            readonly string binaryFileName = "Figures.dat";
 
             private void SerializationXml_Click(object sender, EventArgs e)
             {
@@ -257,35 +254,35 @@ namespace FiguresProgram
 
         #region TreewView Serialization
 
-        private void AddTtreeViewFile(string name)
-            {
-                TreeNode newNode = new TreeNode(name);
-                TreeNode node = treeViewFiles.Nodes.OfType<TreeNode>()
-                                .FirstOrDefault(x => x.Text.Equals(name));
+          private void AddTtreeViewFile(string name)
+          {
+              TreeNode newNode = new TreeNode(name);
+              TreeNode node = treeViewFiles.Nodes.OfType<TreeNode>()
+                              .FirstOrDefault(x => x.Text.Equals(name));
 
-                if (node == null)
-                    treeViewFiles.Nodes.Add(newNode);
-            }
+              if (node == null)
+                  treeViewFiles.Nodes.Add(newNode);
+          }
 
-            private void TreeViewFiles_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-            {
-                string path = e.Node.FullPath;
-                int indexPatch = path.LastIndexOf('.');
-                path = path.Substring(indexPatch).ToLower();
+          private void TreeViewFiles_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+          {
+              string path = e.Node.FullPath;
+              int indexPatch = path.LastIndexOf('.');
+              path = path.Substring(indexPatch).ToLower();
 
-                switch (path)
-                {
-                    case ".dat":
-                        DeserializeBinaty();
-                        break;
-                    case ".json":
-                        DeserializeJson();
-                        break;
-                    case ".xml":
-                        DeserializeXml();
-                        break;
-                }
-            }
+              switch (path)
+              {
+                  case ".dat":
+                      DeserializeBinaty();
+                      break;
+                  case ".json":
+                      DeserializeJson();
+                      break;
+                  case ".xml":
+                      DeserializeXml();
+                      break;
+              }
+          }
 
         #endregion
 
