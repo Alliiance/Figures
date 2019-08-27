@@ -1,28 +1,24 @@
+using System;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace FiguresProgram.Models
 {
+    [XmlInclude(typeof(Circle))]
+    [XmlInclude(typeof(Rectangle))]
+    [XmlInclude(typeof(Triangle))]
+    [Serializable]
     public abstract class Figure
     {
-        protected int x;
-        protected int y;
-        protected int width;
-        protected int height;
-        protected Direction dirX;
-        protected Direction dirY;
-        private bool condition;
-
-        public Figure(int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public int x;
+        public int y;
+        public int width;
+        public int height;
+        public Direction dirX;
+        public Direction dirY;
+        public bool condition;
+        public bool Condition
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-            this.dirX = dirX;
-            this.dirY = dirY;
-            condition = true;
-        }
-        public  bool Condition {
             get { return condition; }
             set { condition = value; }
         }

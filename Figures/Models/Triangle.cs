@@ -1,12 +1,25 @@
+using System;
 using System.Drawing;
 
 namespace FiguresProgram.Models
 {
-    class Triangle : Figure
+    [Serializable]
+    public class Triangle : Figure
     {
         public Triangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
-            : base(x, y, width, height, dirX, dirY)
         {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.dirX = dirX;
+            this.dirY = dirY;
+            condition = true;
+        }
+
+        public Triangle()
+        {
+
         }
 
         public override void Draw(Graphics graphics)

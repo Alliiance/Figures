@@ -149,7 +149,7 @@ namespace FiguresProgram
         private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(List<List<Figure>>));
-                using (FileStream fs = new FileStream("Figures.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("Figures.xml", FileMode.Create))
                 {
                     formatter.Serialize(fs, figures);
                 }
