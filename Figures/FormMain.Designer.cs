@@ -31,8 +31,8 @@ namespace FiguresProgram
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiguresForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.languageTitle = new System.Windows.Forms.Label();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.NewElementCaption = new System.Windows.Forms.Label();
             this.RunFigure = new System.Windows.Forms.Button();
             this.StopFigure = new System.Windows.Forms.Button();
@@ -45,11 +45,15 @@ namespace FiguresProgram
             this.binToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView = new System.Windows.Forms.TreeView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.treeViewFigures = new System.Windows.Forms.TreeView();
             this.pictureBoxFigure = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.listFiguresTitle = new System.Windows.Forms.Label();
+            this.SaveFilesTitle = new System.Windows.Forms.Label();
+            this.treeViewFiles = new System.Windows.Forms.TreeView();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
@@ -57,9 +61,10 @@ namespace FiguresProgram
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.languageTitle);
             this.panel1.Controls.Add(this.comboBoxLanguage);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.NewElementCaption);
             this.panel1.Controls.Add(this.RunFigure);
             this.panel1.Controls.Add(this.StopFigure);
@@ -67,23 +72,20 @@ namespace FiguresProgram
             this.panel1.Controls.Add(this.AddRectangle);
             this.panel1.Controls.Add(this.AddCircle);
             this.panel1.Controls.Add(this.menuStrip1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // languageTitle
+            // 
+            resources.ApplyResources(this.languageTitle, "languageTitle");
+            this.languageTitle.Name = "languageTitle";
             // 
             // comboBoxLanguage
             // 
+            resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguage_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NewElementCaption
             // 
@@ -93,49 +95,49 @@ namespace FiguresProgram
             // 
             // RunFigure
             // 
+            resources.ApplyResources(this.RunFigure, "RunFigure");
             this.RunFigure.BackColor = System.Drawing.Color.GreenYellow;
             this.RunFigure.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.RunFigure, "RunFigure");
             this.RunFigure.Name = "RunFigure";
             this.RunFigure.UseVisualStyleBackColor = false;
             this.RunFigure.Click += new System.EventHandler(this.RunFigure_Click);
             // 
             // StopFigure
             // 
+            resources.ApplyResources(this.StopFigure, "StopFigure");
             this.StopFigure.BackColor = System.Drawing.Color.Crimson;
             this.StopFigure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StopFigure.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.StopFigure, "StopFigure");
             this.StopFigure.Name = "StopFigure";
             this.StopFigure.UseVisualStyleBackColor = false;
             this.StopFigure.Click += new System.EventHandler(this.StopFigure_Click);
             // 
             // AddTriangle
             // 
+            resources.ApplyResources(this.AddTriangle, "AddTriangle");
             this.AddTriangle.BackColor = System.Drawing.Color.Green;
             this.AddTriangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddTriangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.AddTriangle, "AddTriangle");
             this.AddTriangle.Name = "AddTriangle";
             this.AddTriangle.UseVisualStyleBackColor = false;
             this.AddTriangle.Click += new System.EventHandler(this.AddTriangle_Click);
             // 
             // AddRectangle
             // 
+            resources.ApplyResources(this.AddRectangle, "AddRectangle");
             this.AddRectangle.BackColor = System.Drawing.Color.LightCoral;
             this.AddRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddRectangle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.AddRectangle, "AddRectangle");
             this.AddRectangle.Name = "AddRectangle";
             this.AddRectangle.UseVisualStyleBackColor = false;
             this.AddRectangle.Click += new System.EventHandler(this.AddRectangle_Click);
             // 
             // AddCircle
             // 
+            resources.ApplyResources(this.AddCircle, "AddCircle");
             this.AddCircle.BackColor = System.Drawing.SystemColors.Highlight;
             this.AddCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddCircle.ForeColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.AddCircle, "AddCircle");
             this.AddCircle.Name = "AddCircle";
             this.AddCircle.UseVisualStyleBackColor = false;
             this.AddCircle.Click += new System.EventHandler(this.AddCircle_Click);
@@ -150,47 +152,58 @@ namespace FiguresProgram
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Orange;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // saveToolStripMenuItem
             // 
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.binToolStripMenuItem,
             this.xMLToolStripMenuItem,
             this.jSONToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             // 
             // binToolStripMenuItem
             // 
-            this.binToolStripMenuItem.Name = "binToolStripMenuItem";
             resources.ApplyResources(this.binToolStripMenuItem, "binToolStripMenuItem");
+            this.binToolStripMenuItem.Name = "binToolStripMenuItem";
             this.binToolStripMenuItem.Click += new System.EventHandler(this.BinToolStripMenuItem_Click);
             // 
             // xMLToolStripMenuItem
             // 
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             resources.ApplyResources(this.xMLToolStripMenuItem, "xMLToolStripMenuItem");
+            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.XMLToolStripMenuItem_Click);
             // 
             // jSONToolStripMenuItem
             // 
-            this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
             resources.ApplyResources(this.jSONToolStripMenuItem, "jSONToolStripMenuItem");
+            this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
             this.jSONToolStripMenuItem.Click += new System.EventHandler(this.JSONToolStripMenuItem_Click);
             // 
-            // treeView
+            // button1
             // 
-            this.treeView.BackColor = System.Drawing.Color.SeaShell;
-            this.treeView.CheckBoxes = true;
-            resources.ApplyResources(this.treeView, "treeView");
-            this.treeView.Name = "treeView";
-            this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseClick);
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // treeViewFigures
+            // 
+            resources.ApplyResources(this.treeViewFigures, "treeViewFigures");
+            this.treeViewFigures.BackColor = System.Drawing.Color.SeaShell;
+            this.treeViewFigures.CheckBoxes = true;
+            this.treeViewFigures.Name = "treeViewFigures";
+            this.treeViewFigures.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("treeViewFigures.Nodes"))),
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("treeViewFigures.Nodes1"))),
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("treeViewFigures.Nodes2")))});
+            this.treeViewFigures.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_NodeMouseClick);
             // 
             // pictureBoxFigure
             // 
@@ -221,14 +234,35 @@ namespace FiguresProgram
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // listFiguresTitle
+            // 
+            resources.ApplyResources(this.listFiguresTitle, "listFiguresTitle");
+            this.listFiguresTitle.Name = "listFiguresTitle";
+            // 
+            // SaveFilesTitle
+            // 
+            resources.ApplyResources(this.SaveFilesTitle, "SaveFilesTitle");
+            this.SaveFilesTitle.Name = "SaveFilesTitle";
+            // 
+            // treeViewFiles
+            // 
+            resources.ApplyResources(this.treeViewFiles, "treeViewFiles");
+            this.treeViewFiles.BackColor = System.Drawing.Color.LemonChiffon;
+            this.treeViewFiles.Name = "treeViewFiles";
+            this.treeViewFiles.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeViewFiles_NodeMouseClick);
+            // 
             // FiguresForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.treeViewFiles);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SaveFilesTitle);
+            this.Controls.Add(this.listFiguresTitle);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBoxFigure);
-            this.Controls.Add(this.treeView);
+            this.Controls.Add(this.treeViewFigures);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FiguresForm";
@@ -240,6 +274,7 @@ namespace FiguresProgram
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,7 +284,7 @@ namespace FiguresProgram
         private System.Windows.Forms.Button AddTriangle;
         private System.Windows.Forms.Button AddRectangle;
         private System.Windows.Forms.Button AddCircle;
-        private System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.TreeView treeViewFigures;
         private System.Windows.Forms.PictureBox pictureBoxFigure;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button RunFigure;
@@ -265,6 +300,10 @@ namespace FiguresProgram
         private System.Windows.Forms.ComboBox comboBoxLanguage;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label listFiguresTitle;
+        private System.Windows.Forms.Label SaveFilesTitle;
+        private System.Windows.Forms.TreeView treeViewFiles;
+        private System.Windows.Forms.Label languageTitle;
     }
 }
 

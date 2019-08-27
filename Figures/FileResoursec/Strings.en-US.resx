@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LanguageBtn" xml:space="preserve">
-    <value>Buttonn</value>
+  <data name="Circle" xml:space="preserve">
+    <value>Circle</value>
+  </data>
+  <data name="Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="Triangle" xml:space="preserve">
+    <value>Triangle</value>
   </data>
 </root>

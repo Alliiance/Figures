@@ -20,9 +20,6 @@ namespace FiguresProgram
     public partial class FiguresForm : Form
     {
         bool isFormLoaded = false;
-        XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
-        DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -46,11 +43,11 @@ namespace FiguresProgram
             InitializeComponent();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
-            foreach (FigureEnum figure in Enum.GetValues(typeof(FigureEnum)))
-            {
-                treeView.Nodes.Add($"All {figure.ToString()}:");
-            }
-            button1.Text = Strings.LanguageBtn;
+            //foreach (FigureEnum figure in Enum.GetValues(typeof(FigureEnum)))
+            //{
+            //    treeViewFigures.Nodes.Add($"All {figure.ToString()}:");
+            //}
+            // button1.Text = Strings.LanguageBtn;
 
             //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-us");
 
@@ -73,29 +70,29 @@ namespace FiguresProgram
         {
             Circle circle = new Circle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures[0].Add(circle);
-            AddTtreeView(FigureEnum.Circle.ToString());
+            AddTtreeViewFigure(Strings.Circle);
         }
 
         private void AddRectangle_Click(object sender, EventArgs e)
         {
             Models.Rectangle rectangle = new Models.Rectangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures[1].Add(rectangle);
-            AddTtreeView(FigureEnum.Rectangle.ToString());
+            AddTtreeViewFigure(Strings.Rectangle);
         }
 
         private void AddTriangle_Click(object sender, EventArgs e)
         {
             Triangle triangle = new Triangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
             figures[2].Add(triangle);
-            AddTtreeView(FigureEnum.Triangle.ToString());
+            AddTtreeViewFigure(Strings.Triangle);
         }
 
-        private void AddTtreeView(string name)
+        private void AddTtreeViewFigure(string name)
         {
             TreeNode newNode = new TreeNode(name);
 
-            TreeNode createNode = treeView.Nodes.OfType<TreeNode>()
-                .FirstOrDefault(x => x.Text.Equals($"All {name}:"));
+            TreeNode createNode = treeViewFigures.Nodes.OfType<TreeNode>()
+                .FirstOrDefault(x => x.Text.Contains(name));
 
             if(createNode != null)
                 createNode.Nodes.Add(newNode);
@@ -118,7 +115,7 @@ namespace FiguresProgram
 
         private void ChangeCondition(bool conditon)
         {
-            TreeNodeCollection nodes = treeView.Nodes;
+            TreeNodeCollection nodes = treeViewFigures.Nodes;
             foreach (TreeNode node in nodes)
                 foreach (TreeNode item in node.Nodes)
                 {
@@ -175,18 +172,29 @@ namespace FiguresProgram
 
         #region Serialization
 
+        XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
+        DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        string filePath = "SerializerFile/";
+        string xmlFileName = "Figures.xml";
+        string jsonFileName = "Figures.json";
+        string binaryFileName = "Figures.dat";
+
         // Serialization .Xml
         private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("SerializerFile/Figures.xml", FileMode.Create))
+            string path = filePath + xmlFileName;
+            using (FileStream fs = new FileStream(path, FileMode.Create))
             {
                 XmlFormatter.Serialize(fs, figures);
+                AddTtreeViewFile(xmlFileName);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("SerializerFile/Figures.xml", FileMode.OpenOrCreate))
+            string path = filePath + xmlFileName;
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 figures = (List<List<Figure>>)XmlFormatter.Deserialize(fs);
             }
@@ -195,16 +203,18 @@ namespace FiguresProgram
         // Serialization .JSON
         private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            using (FileStream fs = new FileStream("SerializerFile/Figures.json", FileMode.Create))
+            string path = filePath + jsonFileName;
+            using (FileStream fs = new FileStream(filePath + jsonFileName, FileMode.Create))
             {
                 jsonFormatter.WriteObject(fs, figures);
+                AddTtreeViewFile(jsonFileName);
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("SerializerFile/Figures.json", FileMode.OpenOrCreate))
+            string path = filePath + jsonFileName;
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                  figures = (List<List<Figure>>)jsonFormatter.ReadObject(fs);
             }
@@ -213,22 +223,40 @@ namespace FiguresProgram
         // Serialization .Bin
         private void BinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("SerializerFile/Figures.dat", FileMode.Create))
+            string path = filePath + binaryFileName;
+            using (FileStream fs = new FileStream(filePath + binaryFileName, FileMode.Create))
             {
                 binaryFormatter.Serialize(fs, figures);
+                AddTtreeViewFile(binaryFileName);
             }
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("SerializerFile/Figures.dat", FileMode.OpenOrCreate))
+            string path = filePath + binaryFileName;
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 figures = (List<List<Figure>>)binaryFormatter.Deserialize(fs);
             }
         }
 
 
+        private void AddTtreeViewFile(string name)
+        {
+            TreeNode newNode = new TreeNode(name);
+            TreeNode node = treeViewFiles.Nodes.OfType<TreeNode>()
+                            .FirstOrDefault(x => x.Text.Equals(name));
+
+            if (node == null)
+                treeViewFiles.Nodes.Add(newNode);
+        }
+
+
         #endregion
 
+        private void TreeViewFiles_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            string path = e.Node.FullPath;
+        }
     }
 }
