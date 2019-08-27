@@ -7,10 +7,10 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
 using System.Xml.Serialization;
 
 
@@ -22,6 +22,7 @@ namespace FiguresProgram
         bool isFormLoaded = false;
         XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
         DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -195,19 +196,39 @@ namespace FiguresProgram
         private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            using (FileStream fs = new FileStream("SerializerFile/people.json", FileMode.Create))
+            using (FileStream fs = new FileStream("SerializerFile/Figures.json", FileMode.Create))
             {
                 jsonFormatter.WriteObject(fs, figures);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("SerializerFile/Figures.json", FileMode.OpenOrCreate))
+            {
+                 figures = (List<List<Figure>>)jsonFormatter.ReadObject(fs);
             }
         }
 
         // Serialization .Bin
         private void BinToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            using (FileStream fs = new FileStream("SerializerFile/Figures.dat", FileMode.Create))
+            {
+                binaryFormatter.Serialize(fs, figures);
+            }
+        }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("SerializerFile/Figures.dat", FileMode.OpenOrCreate))
+            {
+                figures = (List<List<Figure>>)binaryFormatter.Deserialize(fs);
+            }
         }
 
 
         #endregion
+
     }
 }

@@ -8,13 +8,13 @@ namespace FiguresProgram.Models
     {
         public Rectangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-            this.dirX = dirX;
-            this.dirY = dirY;
-            condition = true;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+            DirX = dirX;
+            DirY = dirY;
+            Condition = true;
         }
 
         public Rectangle()
@@ -24,7 +24,7 @@ namespace FiguresProgram.Models
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawRectangle(Pens.Purple, x, y, width, height);
+            graphics.DrawRectangle(Pens.Purple, X, Y, Width, Height);
         }
     }
 }

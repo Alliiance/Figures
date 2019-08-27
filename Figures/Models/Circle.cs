@@ -9,13 +9,13 @@ namespace FiguresProgram.Models
     {
         public Circle(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-            this.dirX = dirX;
-            this.dirY = dirY;
-            condition = true;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+            DirX = dirX;
+            DirY = dirY;
+            Condition = true;
         }
 
         public Circle()
@@ -25,7 +25,7 @@ namespace FiguresProgram.Models
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawEllipse(Pens.Blue, x, y, width, height);
+            graphics.DrawEllipse(Pens.Blue, X, Y, Width, Height);
         }
     }
 }

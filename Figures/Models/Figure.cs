@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace FiguresProgram.Models
@@ -8,20 +9,66 @@ namespace FiguresProgram.Models
     [XmlInclude(typeof(Rectangle))]
     [XmlInclude(typeof(Triangle))]
     [Serializable]
+    [DataContract]
+    [KnownType(typeof(Circle))]
+    [KnownType(typeof(Rectangle))]
+    [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
-        public int x;
-        public int y;
-        public int width;
-        public int height;
-        public Direction dirX;
-        public Direction dirY;
-        public bool condition;
+        private int x, y, width, height;
+
+        private Direction dirX, dirY;
+
+        private bool condition;
+
+        [DataMember]
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        [DataMember]
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        [DataMember]
+        public int Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
+
+        [DataMember]
+        public int Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
+
+        [DataMember]
+        public Direction DirX
+        {
+            get { return dirX; }
+            set { dirX = value; }
+        }
+        [DataMember]
+        public Direction DirY
+        {
+            get { return dirY; }
+            set { dirY = value; }
+        }
+
+        [DataMember]
         public bool Condition
         {
             get { return condition; }
             set { condition = value; }
         }
+
 
         abstract public void Draw(Graphics graphics);
 

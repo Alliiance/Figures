@@ -230,14 +230,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 9</value>
+    <value>168, 11</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 58</value>
+    <value>645, 71</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
@@ -253,13 +253,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 2</value>
+    <value>433, 2</value>
+  </data>
+  <data name="comboBoxLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 21</value>
+    <value>193, 24</value>
   </data>
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -277,10 +280,13 @@
     <value>0</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 32</value>
+    <value>433, 39</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -304,10 +310,13 @@
     <value>True</value>
   </data>
   <data name="NewElementCaption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 9</value>
+    <value>103, 11</value>
+  </data>
+  <data name="NewElementCaption.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="NewElementCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
+    <value>170, 17</value>
   </data>
   <data name="NewElementCaption.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -328,13 +337,13 @@
     <value>2</value>
   </data>
   <data name="RunFigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 2</value>
+    <value>365, 2</value>
   </data>
   <data name="RunFigure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="RunFigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 23</value>
+    <value>60, 28</value>
   </data>
   <data name="RunFigure.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -355,13 +364,13 @@
     <value>3</value>
   </data>
   <data name="StopFigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 30</value>
+    <value>365, 37</value>
   </data>
   <data name="StopFigure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="StopFigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 23</value>
+    <value>60, 28</value>
   </data>
   <data name="StopFigure.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -382,13 +391,13 @@
     <value>4</value>
   </data>
   <data name="AddTriangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 26</value>
+    <value>243, 32</value>
   </data>
   <data name="AddTriangle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="AddTriangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 32</value>
+    <value>115, 39</value>
   </data>
   <data name="AddTriangle.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -409,13 +418,13 @@
     <value>5</value>
   </data>
   <data name="AddRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 25</value>
+    <value>107, 31</value>
   </data>
   <data name="AddRectangle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="AddRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 32</value>
+    <value>131, 39</value>
   </data>
   <data name="AddRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -436,13 +445,13 @@
     <value>6</value>
   </data>
   <data name="AddCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 24</value>
+    <value>3, 30</value>
   </data>
   <data name="AddCircle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="AddCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 32</value>
+    <value>99, 39</value>
   </data>
   <data name="AddCircle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -469,13 +478,13 @@
     <value>None</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 0</value>
+    <value>5, 0</value>
   </data>
   <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 0, 2</value>
+    <value>5, 2, 0, 2</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 24</value>
+    <value>66, 28</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -496,43 +505,43 @@
     <value>8</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>59, 24</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>Файл</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>166, 26</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
   <data name="binToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
+    <value>130, 26</value>
   </data>
   <data name="binToolStripMenuItem.Text" xml:space="preserve">
     <value>.Bin</value>
   </data>
   <data name="xMLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
+    <value>130, 26</value>
   </data>
   <data name="xMLToolStripMenuItem.Text" xml:space="preserve">
     <value>.XML</value>
   </data>
   <data name="jSONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
+    <value>130, 26</value>
   </data>
   <data name="jSONToolStripMenuItem.Text" xml:space="preserve">
     <value>.JSON</value>
   </data>
   <data name="treeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 9</value>
+    <value>12, 11</value>
   </data>
   <data name="treeView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="treeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 369</value>
+    <value>151, 453</value>
   </data>
   <data name="treeView.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -547,19 +556,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;treeView.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="pictureBoxFigure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pictureBoxFigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 79</value>
+    <value>168, 97</value>
   </data>
   <data name="pictureBoxFigure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="pictureBoxFigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 298</value>
+    <value>645, 367</value>
   </data>
   <data name="pictureBoxFigure.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -574,19 +583,67 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxFigure.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 319</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 371</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>619, 386</value>
+    <value>825, 475</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -805,7 +862,7 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

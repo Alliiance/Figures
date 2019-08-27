@@ -8,13 +8,13 @@ namespace FiguresProgram.Models
     {
         public Triangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
-            this.x = x;
-            this.y = y;
-            this.width = width;
-            this.height = height;
-            this.dirX = dirX;
-            this.dirY = dirY;
-            condition = true;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+            DirX = dirX;
+            DirY = dirY;
+            Condition = true;
         }
 
         public Triangle()
@@ -30,9 +30,9 @@ namespace FiguresProgram.Models
         public Point[] GetTtiangle()
         {
            return new Point[] {
-                new Point(x, y),
-                new Point(x + width, y),
-                new Point(x + height, y + height)
+                new Point(X, Y),
+                new Point(X + Width, Y),
+                new Point(X + Height, Y + Height)
             };
         }
     }
