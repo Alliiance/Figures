@@ -5,10 +5,10 @@ using System.Xml.Serialization;
 
 namespace FiguresProgram.Models
 {
+    [Serializable]
     [XmlInclude(typeof(Circle))]
     [XmlInclude(typeof(Rectangle))]
     [XmlInclude(typeof(Triangle))]
-    [Serializable]
     [DataContract]
     [KnownType(typeof(Circle))]
     [KnownType(typeof(Rectangle))]
