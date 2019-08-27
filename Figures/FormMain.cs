@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -19,6 +20,8 @@ namespace FiguresProgram
     public partial class FiguresForm : Form
     {
         bool isFormLoaded = false;
+        XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
+        DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -140,31 +143,6 @@ namespace FiguresProgram
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
         }
-
-        private void BinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            XmlSerializer formatter = new XmlSerializer(typeof(List<List<Figure>>));
-                using (FileStream fs = new FileStream("Figures.xml", FileMode.Create))
-                {
-                    formatter.Serialize(fs, figures);
-                }
-        }
-
-        private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void FiguresForm_Load(object sender, EventArgs e)
         {
             comboBoxLanguage.DataSource = new CultureInfo[]
@@ -193,5 +171,43 @@ namespace FiguresProgram
                 Application.Restart();
             }
         }
+
+        #region Serialization
+
+        // Serialization .Xml
+        private void XMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("SerializerFile/Figures.xml", FileMode.Create))
+            {
+                XmlFormatter.Serialize(fs, figures);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("SerializerFile/Figures.xml", FileMode.OpenOrCreate))
+            {
+                figures = (List<List<Figure>>)XmlFormatter.Deserialize(fs);
+            }
+        }
+
+        // Serialization .JSON
+        private void JSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (FileStream fs = new FileStream("SerializerFile/people.json", FileMode.Create))
+            {
+                jsonFormatter.WriteObject(fs, figures);
+            }
+        }
+
+        // Serialization .Bin
+        private void BinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #endregion
     }
 }
