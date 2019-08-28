@@ -66,6 +66,7 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Enums\DirectionEnum.cs" />
     <Compile Include="Models\Figure.cs" />
+    <Compile Include="Models\RandomCoordinates.cs" />
     <Compile Include="Models\Rectangle.cs" />
     <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />

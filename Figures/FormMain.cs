@@ -21,6 +21,7 @@ namespace FiguresProgram
         bool isFormLoaded = false;
         int pictureBoxWidth;
         int pictureBoxHeight;
+        RandomCoordinates rand = new RandomCoordinates();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -44,7 +45,11 @@ namespace FiguresProgram
             private void AddCircle_Click(object sender, EventArgs e)
             {
                 string name = Strings.Circle;
-                Circle circle = new Circle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                int width = 50;
+                int height = 50;
+                int posX = rand.GetRandomX(pictureBoxWidth - width);
+                int posY = rand.GetRandomY(pictureBoxHeight - height);
+                Circle circle = new Circle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
                 figures[0].Add(circle);
                 AddTtreeViewFigure(name);
             }
@@ -52,7 +57,11 @@ namespace FiguresProgram
             private void AddRectangle_Click(object sender, EventArgs e)
             {
                 string name = Strings.Rectangle;
-                Models.Rectangle rectangle = new Models.Rectangle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                int width = 50;
+                int height = 50;
+                int posX = rand.GetRandomX(pictureBoxWidth - width);
+                int posY = rand.GetRandomY(pictureBoxHeight - height);
+                Models.Rectangle rectangle = new Models.Rectangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
                 figures[1].Add(rectangle);
                 AddTtreeViewFigure(name);
             }
@@ -60,7 +69,11 @@ namespace FiguresProgram
             private void AddTriangle_Click(object sender, EventArgs e)
             {
                 string name = Strings.Triangle;
-                Triangle triangle = new Triangle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                int width = 50;
+                int height = 50;
+                int posX = rand.GetRandomX(pictureBoxWidth - width);
+                int posY = rand.GetRandomY(pictureBoxHeight - height);
+                Triangle triangle = new Triangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
                 figures[2].Add(triangle);
                 AddTtreeViewFigure(name);
             }
