@@ -1,4 +1,4 @@
-using FiguresProgram.FileResoursec;
+using FiguresProgram.FileResources;
 using FiguresProgram.Models;
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace FiguresProgram
         {
             InitializeLanguage();
             InitializeComponent();
+            InitializeTreewViewFiles();
             pictureBoxWidth = pictureBoxFigure.Size.Width;
             pictureBoxHeight = pictureBoxFigure.Size.Height;
         }
@@ -42,23 +43,26 @@ namespace FiguresProgram
 
             private void AddCircle_Click(object sender, EventArgs e)
             {
-                Circle circle = new Circle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                string name = Strings.Circle;
+                Circle circle = new Circle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
                 figures[0].Add(circle);
-                AddTtreeViewFigure(Strings.Circle);
+                AddTtreeViewFigure(name);
             }
 
             private void AddRectangle_Click(object sender, EventArgs e)
             {
-                Models.Rectangle rectangle = new Models.Rectangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                string name = Strings.Rectangle;
+                Models.Rectangle rectangle = new Models.Rectangle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
                 figures[1].Add(rectangle);
-                AddTtreeViewFigure(Strings.Rectangle);
+                AddTtreeViewFigure(name);
             }
 
             private void AddTriangle_Click(object sender, EventArgs e)
             {
-                Triangle triangle = new Triangle(220, 100, 50, 50, Direction.Left, Direction.Bottom);
+                string name = Strings.Triangle;
+                Triangle triangle = new Triangle(name,220, 100, 50, 50, Direction.Left, Direction.Bottom);
                 figures[2].Add(triangle);
-                AddTtreeViewFigure(Strings.Triangle);
+                AddTtreeViewFigure(name);
             }
 
         #endregion
@@ -89,6 +93,20 @@ namespace FiguresProgram
                     treeViewChangeCheckBox(Node.Nodes[i]);
                 }
             }
+
+        public void Refresh_TreeViewFigure()
+        {
+            for (int i = 0; i < figures.Count; i++)
+            {
+                treeViewFigures.Nodes[i].Nodes.Clear();
+                for (int j = 0; j < figures[i].Count; j++)
+                {
+                   string name = figures[i][j].Name;
+                   TreeNode newNode = new TreeNode(name);
+                   treeViewFigures.Nodes[i].Nodes.Add(newNode);
+                }
+            }
+        }
 
         #endregion
 
@@ -215,7 +233,7 @@ namespace FiguresProgram
             private void SerializationJson_Click(object sender, EventArgs e)
             {
                 string path = filePath + jsonFileName;
-                using (FileStream fs = new FileStream(filePath + jsonFileName, FileMode.Create))
+                using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     jsonFormatter.WriteObject(fs, figures);
                     AddTtreeViewFile(jsonFileName);
@@ -234,7 +252,7 @@ namespace FiguresProgram
             private void SerializationBin_Click(object sender, EventArgs e)
             {
                 string path = filePath + binaryFileName;
-                using (FileStream fs = new FileStream(filePath + binaryFileName, FileMode.Create))
+                using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     binaryFormatter.Serialize(fs, figures);
                     AddTtreeViewFile(binaryFileName);
@@ -282,7 +300,22 @@ namespace FiguresProgram
                       DeserializeXml();
                       break;
               }
+
+            Refresh_TreeViewFigure();
           }
+
+        private void InitializeTreewViewFiles()
+        {
+            string[] files = Directory.GetFiles(filePath);
+
+            foreach (string path in files)
+            {
+                string name = path;
+                int indexPatch = path.LastIndexOf('/');
+                name = name.Substring(indexPatch + 1);
+                AddTtreeViewFile(name);
+            }
+        }
 
         #endregion
 

@@ -28,7 +28,11 @@ namespace FiguresProgram.Models
         public int Height { get; set; }
 
         [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
         public Direction DirX { get; set; }
+
         [DataMember]
         public Direction DirY { get; set; }
 

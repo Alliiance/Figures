@@ -1,3 +1,4 @@
+using FiguresProgram.FileResources;
 using System;
 using System.Drawing;
 
@@ -6,7 +7,9 @@ namespace FiguresProgram.Models
     [Serializable]
     public class Triangle : Figure
     {
-        public Triangle(int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public Triangle() { }
+
+        public Triangle(string name, int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             X = x;
             Y = y;
@@ -15,11 +18,7 @@ namespace FiguresProgram.Models
             DirX = dirX;
             DirY = dirY;
             Condition = true;
-        }
-
-        public Triangle()
-        {
-
+            Name = name;
         }
 
         public override void Draw(Graphics graphics)

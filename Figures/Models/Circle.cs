@@ -1,3 +1,4 @@
+using FiguresProgram.FileResources;
 using System;
 using System.Drawing;
 
@@ -8,7 +9,7 @@ namespace FiguresProgram.Models
     {
         public Circle() { }
 
-        public Circle(int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public Circle(string name, int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             X = x;
             Y = y;
@@ -17,6 +18,7 @@ namespace FiguresProgram.Models
             DirX = dirX;
             DirY = dirY;
             Condition = true;
+            Name = name;
         }
 
         public override void Draw(Graphics graphics)
