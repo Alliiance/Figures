@@ -58,6 +58,7 @@ namespace FiguresProgram
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.languageTitle);
             this.panel1.Controls.Add(this.comboBoxLanguage);
@@ -68,7 +69,6 @@ namespace FiguresProgram
             this.panel1.Controls.Add(this.AddRectangle);
             this.panel1.Controls.Add(this.AddCircle);
             this.panel1.Controls.Add(this.menuStrip1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // languageTitle
@@ -222,8 +222,8 @@ namespace FiguresProgram
             // 
             // treeViewFiles
             // 
-            this.treeViewFiles.BackColor = System.Drawing.Color.LemonChiffon;
             resources.ApplyResources(this.treeViewFiles, "treeViewFiles");
+            this.treeViewFiles.BackColor = System.Drawing.Color.LemonChiffon;
             this.treeViewFiles.Name = "treeViewFiles";
             this.treeViewFiles.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeViewFiles_NodeMouseClick);
             // 

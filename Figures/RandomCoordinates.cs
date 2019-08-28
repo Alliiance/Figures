@@ -8,7 +8,7 @@ namespace FiguresProgram.Models
 {
     class RandomCoordinates
     {
-        Random random = new Random();
+        static Random random = new Random();
         public int GetRandomX(int x)
         {
             return random.Next(0,x);
