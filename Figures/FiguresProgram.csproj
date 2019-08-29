@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoorditatesLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c34b2c20873905d3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\CoorditatesLibrary\v4.0_1.0.0.0__c34b2c20873905d3\CoorditatesLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -66,7 +70,6 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Enums\DirectionEnum.cs" />
     <Compile Include="Models\Figure.cs" />
-    <Compile Include="RandomCoordinates.cs" />
     <Compile Include="Models\Rectangle.cs" />
     <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />

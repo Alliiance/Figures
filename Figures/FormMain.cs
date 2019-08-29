@@ -1,3 +1,4 @@
+using CoorditatesLibrary;
 using FiguresProgram.FileResources;
 using FiguresProgram.Models;
 using System;
@@ -21,7 +22,7 @@ namespace FiguresProgram
         bool isFormLoaded = false;
         int pictureBoxWidth;
         int pictureBoxHeight;
-        RandomCoordinates rand = new RandomCoordinates();
+        CoordinatesRandom rand = new CoordinatesRandom();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -319,6 +320,7 @@ namespace FiguresProgram
 
         private void InitializeTreewViewFiles()
         {
+            Directory.CreateDirectory(filePath);
             string[] files = Directory.GetFiles(filePath);
 
             foreach (string path in files)
