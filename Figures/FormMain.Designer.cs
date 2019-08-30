@@ -51,6 +51,10 @@ namespace FiguresProgram
             this.listFiguresTitle = new System.Windows.Forms.Label();
             this.SaveFilesTitle = new System.Windows.Forms.Label();
             this.treeViewFiles = new System.Windows.Forms.TreeView();
+            this.textBoxCoordinat = new System.Windows.Forms.TextBox();
+            this.labelCoordinat = new System.Windows.Forms.Label();
+            this.minusEvent = new System.Windows.Forms.Button();
+            this.addEvent = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
@@ -60,6 +64,8 @@ namespace FiguresProgram
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.addEvent);
+            this.panel1.Controls.Add(this.minusEvent);
             this.panel1.Controls.Add(this.languageTitle);
             this.panel1.Controls.Add(this.comboBoxLanguage);
             this.panel1.Controls.Add(this.NewElementCaption);
@@ -82,7 +88,7 @@ namespace FiguresProgram
             this.comboBoxLanguage.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
             this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguage_SelectedIndexChanged);
+            this.comboBoxLanguage.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLanguage_SelectedIndexChanged);
             // 
             // NewElementCaption
             // 
@@ -227,10 +233,39 @@ namespace FiguresProgram
             this.treeViewFiles.Name = "treeViewFiles";
             this.treeViewFiles.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeViewFiles_NodeMouseClick);
             // 
+            // textBoxCoordinat
+            // 
+            resources.ApplyResources(this.textBoxCoordinat, "textBoxCoordinat");
+            this.textBoxCoordinat.Name = "textBoxCoordinat";
+            // 
+            // labelCoordinat
+            // 
+            resources.ApplyResources(this.labelCoordinat, "labelCoordinat");
+            this.labelCoordinat.Name = "labelCoordinat";
+            // 
+            // minusEvent
+            // 
+            this.minusEvent.BackColor = System.Drawing.Color.Salmon;
+            resources.ApplyResources(this.minusEvent, "minusEvent");
+            this.minusEvent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.minusEvent.Name = "minusEvent";
+            this.minusEvent.UseVisualStyleBackColor = false;
+            this.minusEvent.Click += new System.EventHandler(this.MinusEvent_Click);
+            // 
+            // addEvent
+            // 
+            this.addEvent.BackColor = System.Drawing.Color.Lime;
+            resources.ApplyResources(this.addEvent, "addEvent");
+            this.addEvent.Name = "addEvent";
+            this.addEvent.UseVisualStyleBackColor = false;
+            this.addEvent.Click += new System.EventHandler(this.AddEvent_Click);
+            // 
             // FiguresForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelCoordinat);
+            this.Controls.Add(this.textBoxCoordinat);
             this.Controls.Add(this.treeViewFiles);
             this.Controls.Add(this.SaveFilesTitle);
             this.Controls.Add(this.listFiguresTitle);
@@ -274,6 +309,10 @@ namespace FiguresProgram
         private System.Windows.Forms.Label SaveFilesTitle;
         private System.Windows.Forms.TreeView treeViewFiles;
         private System.Windows.Forms.Label languageTitle;
+        private System.Windows.Forms.TextBox textBoxCoordinat;
+        private System.Windows.Forms.Label labelCoordinat;
+        private System.Windows.Forms.Button minusEvent;
+        private System.Windows.Forms.Button addEvent;
     }
 }
 

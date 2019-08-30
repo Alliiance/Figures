@@ -121,11 +121,62 @@
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="addEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>557, 4</value>
+  </data>
+  <data name="addEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="addEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="addEvent.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;addEvent.Name" xml:space="preserve">
+    <value>addEvent</value>
+  </data>
+  <data name="&gt;&gt;addEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addEvent.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;addEvent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="minusEvent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="minusEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>593, 3</value>
+  </data>
+  <data name="minusEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 31</value>
+  </data>
+  <data name="minusEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="minusEvent.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;minusEvent.Name" xml:space="preserve">
+    <value>minusEvent</value>
+  </data>
+  <data name="&gt;&gt;minusEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minusEvent.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;minusEvent.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="languageTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="languageTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>431, 17</value>
   </data>
@@ -148,7 +199,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;languageTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>432, 38</value>
@@ -172,7 +223,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;comboBoxLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="NewElementCaption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,7 +253,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;NewElementCaption.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="RunFigure.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 2</value>
@@ -229,7 +280,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;RunFigure.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="StopFigure.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 37</value>
@@ -256,7 +307,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;StopFigure.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="AddTriangle.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 32</value>
@@ -283,7 +334,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;AddTriangle.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="AddRectangle.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 31</value>
@@ -310,7 +361,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;AddRectangle.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="AddCircle.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 30</value>
@@ -337,13 +388,76 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;AddCircle.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>109, 17</value>
   </metadata>
   <data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 0</value>
+  </data>
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 2, 0, 2</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 28</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>435, 11</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>641, 71</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 24</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 26</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сохранить</value>
   </data>
   <data name="SerializationBin.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 26</value>
@@ -362,69 +476,6 @@
   </data>
   <data name="SerializationJson.Text" xml:space="preserve">
     <value>.JSON</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 26</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 26</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 0</value>
-  </data>
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 2, 0, 2</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 30</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 11</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 71</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="treeViewFigures.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 28</value>
@@ -478,7 +529,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;treeViewFigures.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="pictureBoxFigure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -487,13 +538,13 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBoxFigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 96</value>
+    <value>435, 97</value>
   </data>
   <data name="pictureBoxFigure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="pictureBoxFigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 367</value>
+    <value>643, 386</value>
   </data>
   <data name="pictureBoxFigure.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -508,7 +559,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxFigure.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -538,7 +589,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;listFiguresTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="SaveFilesTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -565,7 +616,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SaveFilesTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="treeViewFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -577,7 +628,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="treeViewFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 130</value>
+    <value>212, 149</value>
   </data>
   <data name="treeViewFiles.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -592,19 +643,73 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;treeViewFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxCoordinat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="textBoxCoordinat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 29</value>
+  </data>
+  <data name="textBoxCoordinat.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxCoordinat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 454</value>
+  </data>
+  <data name="textBoxCoordinat.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;textBoxCoordinat.Name" xml:space="preserve">
+    <value>textBoxCoordinat</value>
+  </data>
+  <data name="&gt;&gt;textBoxCoordinat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxCoordinat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxCoordinat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelCoordinat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCoordinat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 9</value>
+  </data>
+  <data name="labelCoordinat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 17</value>
+  </data>
+  <data name="labelCoordinat.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="labelCoordinat.Text" xml:space="preserve">
+    <value>Координаты пересечения:</value>
+  </data>
+  <data name="&gt;&gt;labelCoordinat.Name" xml:space="preserve">
+    <value>labelCoordinat</value>
+  </data>
+  <data name="&gt;&gt;labelCoordinat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCoordinat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelCoordinat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>56</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>883, 475</value>
+    <value>1089, 494</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -22,7 +22,7 @@ namespace FiguresProgram
         bool isFormLoaded = false;
         int pictureBoxWidth;
         int pictureBoxHeight;
-        CoordinatesRandom rand = new CoordinatesRandom();
+        readonly CoordinatesRandom rand = new CoordinatesRandom();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -96,15 +96,15 @@ namespace FiguresProgram
 
             private void TreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
             {
-                treeViewChangeCheckBox(e.Node);
+                TreeViewChangeCheckBox(e.Node);
             }
 
-            private void treeViewChangeCheckBox(TreeNode Node)
+            private void TreeViewChangeCheckBox(TreeNode Node)
             {
                 for (int i = 0; i < Node.Nodes.Count; i++)
                 {
                     Node.Nodes[i].Checked = Node.Checked;
-                    treeViewChangeCheckBox(Node.Nodes[i]);
+                    TreeViewChangeCheckBox(Node.Nodes[i]);
                 }
             }
 
@@ -141,10 +141,8 @@ namespace FiguresProgram
                 TreeNodeCollection nodes = treeViewFigures.Nodes;
                 foreach (TreeNode node in nodes)
                     foreach (TreeNode item in node.Nodes)
-                    {
                         if (item.Checked)
                             figures[node.Index][item.Index].Condition = conditon;
-                    }
             }
 
             private void FiguresForm_Resize(object sender, EventArgs e)
@@ -198,7 +196,7 @@ namespace FiguresProgram
                 }
             }
 
-            private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+            private void ComboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
             {
                 if (isFormLoaded)
                 {
@@ -217,9 +215,9 @@ namespace FiguresProgram
 
         #region Serialization and Deserialize
 
-            XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            readonly XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<List<Figure>>));
+            readonly DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<List<Figure>>));
+            readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
             readonly string filePath = "SerializerFile/";
             readonly string xmlFileName = "Figures.xml";
             readonly string jsonFileName = "Figures.json";
@@ -337,6 +335,27 @@ namespace FiguresProgram
         private void Timer_Tick(object sender, EventArgs e)
         {
             pictureBoxFigure.Refresh();
+        }
+
+
+        #region Event buttons
+
+        #endregion
+        private void AddEvent_Click(object sender, EventArgs e)
+        {
+            TreeNodeCollection nodes = treeViewFigures.Nodes;
+            foreach (TreeNode node in nodes)
+                foreach (TreeNode item in node.Nodes)
+                    if (item.Checked)
+                    {
+                      textBoxCoordinat.Text = figures[node.Index][item.Index].X.ToString();
+                    }
+                        
+        }
+
+        private void MinusEvent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
