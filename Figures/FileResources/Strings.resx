@@ -120,10 +120,16 @@
   <data name="Circle" xml:space="preserve">
     <value>Круг</value>
   </data>
+  <data name="Coordinate" xml:space="preserve">
+    <value>Координаты</value>
+  </data>
   <data name="Rectangle" xml:space="preserve">
     <value>Прямоугольник</value>
   </data>
   <data name="Triangle" xml:space="preserve">
     <value>Треугольник</value>
+  </data>
+  <data name="TypeFigure" xml:space="preserve">
+    <value>Тип фигуры</value>
   </data>
 </root>

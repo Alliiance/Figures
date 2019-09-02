@@ -70,6 +70,15 @@ namespace FiguresProgram.FileResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Координаты.
+        /// </summary>
+        internal static string Coordinate {
+            get {
+                return ResourceManager.GetString("Coordinate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Прямоугольник.
         /// </summary>
         internal static string Rectangle {
@@ -84,6 +93,15 @@ namespace FiguresProgram.FileResources {
         internal static string Triangle {
             get {
                 return ResourceManager.GetString("Triangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тип фигуры.
+        /// </summary>
+        internal static string TypeFigure {
+            get {
+                return ResourceManager.GetString("TypeFigure", resourceCulture);
             }
         }
     }

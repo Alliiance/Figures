@@ -15,6 +15,19 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
+        public delegate void PointDelegate(Figure f);
+        public event PointDelegate MyPoint;
+
+        public Figure figureEvent;
+
+        public void GetPoint()
+        {
+            if (figureEvent.X == 10)
+            {
+                MyPoint(figureEvent);
+            }
+        }
+
         [DataMember]
         public int X { get; set; }
 

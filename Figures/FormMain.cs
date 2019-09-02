@@ -23,7 +23,6 @@ namespace FiguresProgram
         int pictureBoxWidth;
         int pictureBoxHeight;
         readonly CoordinatesRandom rand = new CoordinatesRandom();
-
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
         {
@@ -335,6 +334,19 @@ namespace FiguresProgram
         private void Timer_Tick(object sender, EventArgs e)
         {
             pictureBoxFigure.Refresh();
+            foreach (var figure in figures)
+                foreach (var item in figure)
+                {
+                    try
+                    {
+                        item.GetPoint();
+                    }
+                    catch (Exception)
+                    {
+
+                        break;
+                    }
+                }
         }
 
 
@@ -343,19 +355,21 @@ namespace FiguresProgram
         #endregion
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            TreeNodeCollection nodes = treeViewFigures.Nodes;
-            foreach (TreeNode node in nodes)
-                foreach (TreeNode item in node.Nodes)
-                    if (item.Checked)
-                    {
-                      textBoxCoordinat.Text = figures[node.Index][item.Index].X.ToString();
-                    }
-                        
+            figures[0][0].figureEvent = figures[0][0];
+            figures[0][0].MyPoint += Points_MyPointEvent;
         }
 
+        private void Points_MyPointEvent(Figure f)
+        {
+            textBoxCoordinat.Text += $"\n{Strings.TypeFigure}: {f.Name}" +
+                                     $"\n{Strings.Coordinate}-X : {f.X}," +
+                                     $"\n{Strings.Coordinate}-Y : {f.Y}." +
+                                     $"\n {new string('_',22)}";
+        }
+         
         private void MinusEvent_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
