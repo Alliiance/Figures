@@ -16,12 +16,12 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
-        public delegate void PointDelegate(int x, int y, string name);
+        public delegate void PointDelegate(string name, int x, int y);
         public event PointDelegate MyPoint;
 
-        protected void InvokeEvent(int x ,int y ,string name)
+        protected void InvokeEvent(string name, int x, int y)
         {
-            MyPoint.Invoke(x, y, name);
+            MyPoint.Invoke(name, x, y);
         }
 
         public Figure figureEvent;

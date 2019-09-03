@@ -351,11 +351,11 @@ namespace FiguresProgram
 
         }
 
-        private void Points_MyPointEvent(int x , int y, string name)
+        private void Points_MyPointEvent(string name,int x , int y)
         {
-            textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {x}" +
-                                     $"\r\n{Strings.Coordinate}-X : {y}," +
-                                     $"\r\n{Strings.Coordinate}-Y : {name}." +
+            textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {name}" +
+                                     $"\r\n{Strings.Coordinate}-X : {x}," +
+                                     $"\r\n{Strings.Coordinate}-Y : {y}." +
                                      $"\r\n{new string('_', 20)} \r\n";
         }
 

@@ -33,20 +33,38 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    for (int j = figure[i].X; j<figure[i].X + figure[i].Width; j++)
-                    {
-                        for (int k = figure[index].X; k<figure[index].X + figure[index].Width ; k++)
-                        {
-                            if (j == k)
-                            {
-                                InvokeEvent(j , k , figure[index].Name);
-                                break;
-                            }
-                        }
-                    }
+                    int x = GetPointX(figure[i], figure[index]);
+                    int y = GetPointY(figure[i], figure[index]);
 
+                    if (x > 0 && y > 0)
+                    {
+                        InvokeEvent(figure[index].Name, x, y);
+                    }
                 }
             }   
+        }
+
+
+        public int GetPointX(Figure figure, Figure select)
+        {
+            for (int i = figure.X; i < figure.X + figure.Width; i++)
+            {
+                for (int k = select.X; k < select.X + select.Width; k++)
+                    if (i == k)
+                        return i;
+            }
+            return -1;
+        }
+
+        public int GetPointY(Figure figure, Figure select)
+        {
+            for (int i = figure.Y; i < figure.Y + figure.Height; i++)
+            {
+                for (int k = select.Y; k < select.Y + select.Height; k++)
+                    if (i == k)
+                        return i;
+            }
+            return -1;
         }
 
     }
