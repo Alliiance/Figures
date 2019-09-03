@@ -16,23 +16,17 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
-        public delegate void PointDelegate(Figure f);
+        public delegate void PointDelegate(int x, int y, string name);
         public event PointDelegate MyPoint;
-        public int indexElement;
+
+        protected void InvokeEvent(int x ,int y ,string name)
+        {
+            MyPoint.Invoke(x, y, name);
+        }
 
         public Figure figureEvent;
 
-        public void GetPoint(List<Figure> figure, int count)
-        {
-            if (figureEvent.X == 10)
-                foreach (var f in figure)
-                    {
-                        if (f.Name == Name && indexElement != count)
-                        {                            
-                            MyPoint(figureEvent);
-                        }
-                    }                       
-        }
+        abstract public void GetPoints(List<Figure> figure, int indexElement);
 
         [DataMember]
         public int X { get; set; }

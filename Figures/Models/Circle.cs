@@ -1,5 +1,6 @@
 using FiguresProgram.FileResources;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace FiguresProgram.Models
@@ -24,6 +25,11 @@ namespace FiguresProgram.Models
         public override void Draw(Graphics graphics)
         {
             graphics.DrawEllipse(Pens.Blue, X, Y, Width, Height);
+        }
+
+        public override void GetPoints(List<Figure> figure, int indexElement)
+        {
+            
         }
     }
 }

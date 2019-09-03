@@ -341,7 +341,6 @@ namespace FiguresProgram
                     if (item.Checked)
                     {
                         Figure figure = figures[node.Index][item.Index];
-                        figure.indexElement = item.Index;
                         figure.figureEvent = figure;
                         figure.MyPoint += Points_MyPointEvent;
                     }
@@ -352,11 +351,11 @@ namespace FiguresProgram
 
         }
 
-        private void Points_MyPointEvent(Figure f)
+        private void Points_MyPointEvent(int x , int y, string name)
         {
-            textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {f.Name}" +
-                                     $"\r\n{Strings.Coordinate}-X : {f.X}," +
-                                     $"\r\n{Strings.Coordinate}-Y : {f.Y}." +
+            textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {x}" +
+                                     $"\r\n{Strings.Coordinate}-X : {y}," +
+                                     $"\r\n{Strings.Coordinate}-Y : {name}." +
                                      $"\r\n{new string('_', 20)} \r\n";
         }
 
@@ -374,7 +373,7 @@ namespace FiguresProgram
                     try
                     {
                         if (item.figureEvent != null)
-                            item.GetPoint(figure, indexElement);
+                            item.GetPoints(figure, indexElement);
                     }
                     catch
                     {

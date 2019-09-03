@@ -1,5 +1,6 @@
 using FiguresProgram.FileResources;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace FiguresProgram.Models
@@ -33,6 +34,11 @@ namespace FiguresProgram.Models
                 new Point(X + Width, Y),
                 new Point(X + Height, Y + Height)
             };
+        }
+
+        public override void GetPoints(List<Figure> figure, int indexElement)
+        {
+
         }
     }
 }
