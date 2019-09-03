@@ -33,8 +33,8 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    int x = GetPointX(figure[i], figure[index]);
-                    int y = GetPointY(figure[i], figure[index]);
+                    int x = GetPoint(figure[i].Width, figure[index].Width, figure[i].X, figure[index].X);
+                    int y = GetPoint(figure[i].Width, figure[index].Width, figure[i].Y, figure[index].Y);
 
                     if (x > 0 && y > 0)
                     {
@@ -44,28 +44,15 @@ namespace FiguresProgram.Models
             }   
         }
 
-
-        public int GetPointX(Figure figure, Figure select)
+        public int GetPoint(int firstFigureWidth, int secondFigureWidth, int firstCoord, int secondCoord)
         {
-            for (int i = figure.X; i < figure.X + figure.Width; i++)
+            for (int i = firstCoord; i < firstCoord + firstFigureWidth; i++)
             {
-                for (int k = select.X; k < select.X + select.Width; k++)
+                for (int k = secondCoord; k < secondCoord + secondFigureWidth; k++)
                     if (i == k)
                         return i;
             }
             return -1;
         }
-
-        public int GetPointY(Figure figure, Figure select)
-        {
-            for (int i = figure.Y; i < figure.Y + figure.Height; i++)
-            {
-                for (int k = select.Y; k < select.Y + select.Height; k++)
-                    if (i == k)
-                        return i;
-            }
-            return -1;
-        }
-
     }
 }
