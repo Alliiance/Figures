@@ -331,45 +331,61 @@ namespace FiguresProgram
 
         #endregion
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            pictureBoxFigure.Refresh();
-            foreach (var figure in figures)
-                foreach (var item in figure)
-                {
-                    try
-                    {
-                        item.GetPoint();
-                    }
-                    catch (Exception)
-                    {
-
-                        break;
-                    }
-                }
-        }
-
-
         #region Event buttons
 
-        #endregion
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            figures[0][0].figureEvent = figures[0][0];
-            figures[0][0].MyPoint += Points_MyPointEvent;
+            TreeNodeCollection nodes = treeViewFigures.Nodes;
+            foreach (TreeNode node in nodes)
+                foreach (TreeNode item in node.Nodes)
+                    if (item.Checked)
+                    {
+                        Figure figure = figures[node.Index][item.Index];
+                        figure.indexElement = item.Index;
+                        figure.figureEvent = figure;
+                        figure.MyPoint += Points_MyPointEvent;
+                    }
+        }
+
+        private void MinusEvent_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Points_MyPointEvent(Figure f)
         {
-            textBoxCoordinat.Text += $"\n{Strings.TypeFigure}: {f.Name}" +
-                                     $"\n{Strings.Coordinate}-X : {f.X}," +
-                                     $"\n{Strings.Coordinate}-Y : {f.Y}." +
-                                     $"\n {new string('_',22)}";
+            textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {f.Name}" +
+                                     $"\r\n{Strings.Coordinate}-X : {f.X}," +
+                                     $"\r\n{Strings.Coordinate}-Y : {f.Y}." +
+                                     $"\r\n{new string('_', 20)} \r\n";
         }
-         
-        private void MinusEvent_Click(object sender, EventArgs e)
+
+
+        #endregion
+
+        private void Timer_Tick(object sender, EventArgs e)
         {
-           
+            pictureBoxFigure.Refresh();
+            foreach (var figure in figures)
+            {
+                int indexElement = 0;
+                foreach (var item in figure)
+                {
+                    try
+                    {
+                        if (item.figureEvent != null)
+                            item.GetPoint(figure, indexElement);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                    finally
+                    {
+                        indexElement++;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
@@ -17,15 +18,20 @@ namespace FiguresProgram.Models
     {
         public delegate void PointDelegate(Figure f);
         public event PointDelegate MyPoint;
+        public int indexElement;
 
         public Figure figureEvent;
 
-        public void GetPoint()
+        public void GetPoint(List<Figure> figure, int count)
         {
             if (figureEvent.X == 10)
-            {
-                MyPoint(figureEvent);
-            }
+                foreach (var f in figure)
+                    {
+                        if (f.Name == Name && indexElement != count)
+                        {                            
+                            MyPoint(figureEvent);
+                        }
+                    }                       
         }
 
         [DataMember]

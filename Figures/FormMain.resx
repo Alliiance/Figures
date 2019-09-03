@@ -396,6 +396,36 @@
   <data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="SerializationBin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 26</value>
+  </data>
+  <data name="SerializationBin.Text" xml:space="preserve">
+    <value>.Bin</value>
+  </data>
+  <data name="SerializationXml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 26</value>
+  </data>
+  <data name="SerializationXml.Text" xml:space="preserve">
+    <value>.XML</value>
+  </data>
+  <data name="SerializationJson.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 26</value>
+  </data>
+  <data name="SerializationJson.Text" xml:space="preserve">
+    <value>.JSON</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 26</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 24</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 0</value>
   </data>
@@ -424,13 +454,13 @@
     <value>10</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 11</value>
+    <value>443, 11</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>641, 71</value>
+    <value>639, 71</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -446,36 +476,6 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 24</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 26</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="SerializationBin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 26</value>
-  </data>
-  <data name="SerializationBin.Text" xml:space="preserve">
-    <value>.Bin</value>
-  </data>
-  <data name="SerializationXml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 26</value>
-  </data>
-  <data name="SerializationXml.Text" xml:space="preserve">
-    <value>.XML</value>
-  </data>
-  <data name="SerializationJson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 26</value>
-  </data>
-  <data name="SerializationJson.Text" xml:space="preserve">
-    <value>.JSON</value>
   </data>
   <data name="treeViewFigures.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 28</value>
@@ -538,13 +538,13 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBoxFigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 97</value>
+    <value>443, 97</value>
   </data>
   <data name="pictureBoxFigure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="pictureBoxFigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 386</value>
+    <value>641, 386</value>
   </data>
   <data name="pictureBoxFigure.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -654,8 +654,11 @@
   <data name="textBoxCoordinat.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="textBoxCoordinat.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
   <data name="textBoxCoordinat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 454</value>
+    <value>204, 454</value>
   </data>
   <data name="textBoxCoordinat.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -709,7 +712,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1089, 494</value>
+    <value>1095, 494</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

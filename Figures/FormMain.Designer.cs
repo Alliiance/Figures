@@ -31,6 +31,8 @@ namespace FiguresProgram
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiguresForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addEvent = new System.Windows.Forms.Button();
+            this.minusEvent = new System.Windows.Forms.Button();
             this.languageTitle = new System.Windows.Forms.Label();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.NewElementCaption = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@ namespace FiguresProgram
             this.treeViewFiles = new System.Windows.Forms.TreeView();
             this.textBoxCoordinat = new System.Windows.Forms.TextBox();
             this.labelCoordinat = new System.Windows.Forms.Label();
-            this.minusEvent = new System.Windows.Forms.Button();
-            this.addEvent = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFigure)).BeginInit();
@@ -76,6 +76,23 @@ namespace FiguresProgram
             this.panel1.Controls.Add(this.AddCircle);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Name = "panel1";
+            // 
+            // addEvent
+            // 
+            this.addEvent.BackColor = System.Drawing.Color.Lime;
+            resources.ApplyResources(this.addEvent, "addEvent");
+            this.addEvent.Name = "addEvent";
+            this.addEvent.UseVisualStyleBackColor = false;
+            this.addEvent.Click += new System.EventHandler(this.AddEvent_Click);
+            // 
+            // minusEvent
+            // 
+            this.minusEvent.BackColor = System.Drawing.Color.Salmon;
+            resources.ApplyResources(this.minusEvent, "minusEvent");
+            this.minusEvent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.minusEvent.Name = "minusEvent";
+            this.minusEvent.UseVisualStyleBackColor = false;
+            this.minusEvent.Click += new System.EventHandler(this.MinusEvent_Click);
             // 
             // languageTitle
             // 
@@ -242,23 +259,6 @@ namespace FiguresProgram
             // 
             resources.ApplyResources(this.labelCoordinat, "labelCoordinat");
             this.labelCoordinat.Name = "labelCoordinat";
-            // 
-            // minusEvent
-            // 
-            this.minusEvent.BackColor = System.Drawing.Color.Salmon;
-            resources.ApplyResources(this.minusEvent, "minusEvent");
-            this.minusEvent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.minusEvent.Name = "minusEvent";
-            this.minusEvent.UseVisualStyleBackColor = false;
-            this.minusEvent.Click += new System.EventHandler(this.MinusEvent_Click);
-            // 
-            // addEvent
-            // 
-            this.addEvent.BackColor = System.Drawing.Color.Lime;
-            resources.ApplyResources(this.addEvent, "addEvent");
-            this.addEvent.Name = "addEvent";
-            this.addEvent.UseVisualStyleBackColor = false;
-            this.addEvent.Click += new System.EventHandler(this.AddEvent_Click);
             // 
             // FiguresForm
             // 
