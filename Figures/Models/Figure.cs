@@ -16,7 +16,10 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure
     {
+
         public delegate void PointDelegate(string name, int x, int y);
+
+        [field: NonSerialized]
         public event PointDelegate MyPoint;
 
         protected void InvokeEvent(string name, int x, int y)
@@ -24,9 +27,13 @@ namespace FiguresProgram.Models
             MyPoint.Invoke(name, x, y);
         }
 
+        [XmlIgnore]
+        public bool coordinateCondition = true;
+
+        [XmlIgnore]
         public Figure figureEvent;
 
-        abstract public void GetPoints(List<Figure> figure, int indexElement);
+        abstract public void GetPoints(List<Figure> figure, int indexElement, int pictureWidth, int pictureHeight);
 
         [DataMember]
         public int X { get; set; }
@@ -89,6 +96,14 @@ namespace FiguresProgram.Models
                         break;
                 }
             }
+        }
+
+        public bool IsEventNull()
+        {
+            if (MyPoint != null)
+                return true;
+            else
+                return false;
         }
     }
 }

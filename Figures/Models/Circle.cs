@@ -27,9 +27,61 @@ namespace FiguresProgram.Models
             graphics.DrawEllipse(Pens.Blue, X, Y, Width, Height);
         }
 
-        public override void GetPoints(List<Figure> figure, int indexElement)
+        public override void GetPoints(List<Figure> figure, int index, int pictureWidth, int pictureHeight)
         {
-            
+            for (int i = 0; i < figure.Count; i++)
+            {
+                if (figure[i].Name == Name && i != index)
+                {
+
+                    int x = GetPointX(figure[i].Width, figure[index].Width, figure[i].X, figure[index].X);
+                    int y = GetPointY(figure[i].Height, figure[i].Y, figure[index].Y);
+
+
+                    if (x >= 0 && y >= 0)
+                    {
+                        if (coordinateCondition)
+                        {
+                            InvokeEvent(figure[index].Name, x, y);
+                            coordinateCondition = false;
+                        }
+                        else
+                        {
+                            Figure f1 = figure[i];
+                            Figure f2 = figure[index];
+                            f1.Move(pictureWidth, pictureHeight);
+                            f2.Move(pictureWidth, pictureHeight);
+                            int x1 = GetPointX(f1.Width, f2.Width, f1.X, f2.X);
+                            int y1 = GetPointY(f1.Height, f1.Y, f2.Y);
+                            if (x1 == -1 || y1 == -1)
+                            {
+                                coordinateCondition = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private int GetPointX(int firstFigureWidth, int secondFigureWidth, int firstCoord, int secondCoord)
+        {
+            for (int i = firstCoord; i < firstCoord + firstFigureWidth; i++)
+            {
+                for (int k = secondCoord; k < secondCoord + secondFigureWidth; k++)
+                    if (i == k)
+                        return i;
+            }
+            return -1;
+        }
+
+        private int GetPointY(int firstFigureHeight, int firstCoord, int secondCoord)
+        {
+            for (int i = firstCoord; i < firstCoord + firstFigureHeight; i++)
+            {
+                for (int k = secondCoord; k < secondCoord + (i - firstCoord); k++)
+                    if (i == k)
+                        return i;
+            }
+            return -1;
         }
     }
 }

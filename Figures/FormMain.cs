@@ -12,7 +12,7 @@ using System.Runtime.Serialization.Json;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-
+using System.Media;
 
 namespace FiguresProgram
 {
@@ -23,6 +23,7 @@ namespace FiguresProgram
         int pictureBoxWidth;
         int pictureBoxHeight;
         readonly CoordinatesRandom rand = new CoordinatesRandom();
+
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
         {
@@ -335,6 +336,16 @@ namespace FiguresProgram
 
         private void AddEvent_Click(object sender, EventArgs e)
         {
+            ChangeEvenet(true);
+        }
+
+        private void MinusEvent_Click(object sender, EventArgs e)
+        {
+            ChangeEvenet(false);
+        }
+
+        private void ChangeEvenet(bool condition)
+        {
             TreeNodeCollection nodes = treeViewFigures.Nodes;
             foreach (TreeNode node in nodes)
                 foreach (TreeNode item in node.Nodes)
@@ -342,13 +353,11 @@ namespace FiguresProgram
                     {
                         Figure figure = figures[node.Index][item.Index];
                         figure.figureEvent = figure;
-                        figure.MyPoint += Points_MyPointEvent;
+                        if (condition)
+                            figure.MyPoint += Points_MyPointEvent;
+                        else
+                            figure.MyPoint -= Points_MyPointEvent;
                     }
-        }
-
-        private void MinusEvent_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Points_MyPointEvent(string name,int x , int y)
@@ -357,8 +366,11 @@ namespace FiguresProgram
                                      $"\r\n{Strings.Coordinate}-X : {x}," +
                                      $"\r\n{Strings.Coordinate}-Y : {y}." +
                                      $"\r\n{new string('_', 20)} \r\n";
+            using (SoundPlayer beep = new SoundPlayer("Sounds/beep.wav"))
+            {
+                beep.Play();
+            }
         }
-
 
         #endregion
 
@@ -372,8 +384,8 @@ namespace FiguresProgram
                 {
                     try
                     {
-                        if (item.figureEvent != null)
-                            item.GetPoints(figure, indexElement);
+                        if (item.IsEventNull())
+                            item.GetPoints(figure, indexElement, pictureBoxWidth, pictureBoxHeight);
                     }
                     catch
                     {
