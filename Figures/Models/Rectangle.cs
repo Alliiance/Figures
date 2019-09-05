@@ -34,10 +34,10 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    int zX1 = figure[i].X;
-                    int zY1 = figure[i].Y;
-                    int zX2 = figure[index].X;
-                    int zY2 = figure[index].Y;
+                    //int zX1 = figure[i].X;
+                    //int zY1 = figure[i].Y;
+                    //int zX2 = figure[index].X;
+                    //int zY2 = figure[index].Y;
 
 
                     int x = GetPoint(figure[i].Width, figure[index].Width, figure[i].X, figure[index].X);
@@ -62,10 +62,10 @@ namespace FiguresProgram.Models
                             {
                                 coordinateCondition = true;
                             }
-                            f1.X = zX1;
-                            f1.Y = zY1;
-                            f2.X = zX2;
-                            f2.Y = zY2;
+                            //f1.X = zX1;
+                            //f1.Y = zY1;
+                            //f2.X = zX2;
+                            //f2.Y = zY2;
                         }
                     }
                 }

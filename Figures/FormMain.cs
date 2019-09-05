@@ -312,7 +312,6 @@ namespace FiguresProgram
                       DeserializeXml();
                       break;
               }
-
             Refresh_TreeViewFigure();
           }
 
