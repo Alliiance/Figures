@@ -14,8 +14,12 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Circle))]
     [KnownType(typeof(Rectangle))]
     [KnownType(typeof(Triangle))]
-    public abstract class Figure
+    public abstract class Figure : ICloneable
     {
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
 
         public delegate void PointDelegate(string name, int x, int y);
 

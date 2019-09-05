@@ -11,7 +11,7 @@ namespace FiguresProgram.Models
     {
         public Rectangle() { }
 
-        public Rectangle(string name,int x, int y, int width, int height, Direction dirX, Direction dirY)
+        public Rectangle(string name, int x, int y, int width, int height, Direction dirX, Direction dirY)
         {
             X = x;
             Y = y;
@@ -34,14 +34,8 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    //int zX1 = figure[i].X;
-                    //int zY1 = figure[i].Y;
-                    //int zX2 = figure[index].X;
-                    //int zY2 = figure[index].Y;
-
-
-                    int x = GetPoint(figure[i].Width, figure[index].Width, figure[i].X, figure[index].X);
-                    int y = GetPoint(figure[i].Height, figure[index].Height, figure[i].Y, figure[index].Y);
+                    int x = GetPoint(figure[i].Width, figure[i].X, figure[index].X);
+                    int y = GetPoint(figure[i].Height, figure[i].Y, figure[index].Y);
 
                     if (x >= 0 && y >= 0)
                     {
@@ -52,20 +46,9 @@ namespace FiguresProgram.Models
                         }
                         else
                         {
-                            Figure f1 = figure[i];
-                            Figure f2 = figure[index];
-                            f1.Move(pictureWidth, pictureHeight);
-                            f2.Move(pictureWidth, pictureHeight);
-                            int x1 = GetPoint(f1.Width, f2.Width, f1.X, f2.X);
-                            int y1 = GetPoint(f1.Height, f2.Height, f1.Y, f2.Y);
-                            if (x1 == -1 || y1 == -1)
-                            {
-                                coordinateCondition = true;
-                            }
-                            //f1.X = zX1;
-                            //f1.Y = zY1;
-                            //f2.X = zX2;
-                            //f2.Y = zY2;
+                            Figure f1 = (Figure)figure[i].Clone();
+                            Figure f2 = (Figure)figure[index].Clone();
+                            coordinateCondition = GetNextPoint(f1, f2, pictureWidth,pictureHeight);
                         }
                     }
                 }
@@ -73,11 +56,22 @@ namespace FiguresProgram.Models
 
         }
 
-        private int GetPoint(int firstFigureWidth, int secondFigureWidth, int firstCoord, int secondCoord)
+        private bool GetNextPoint(Figure f1, Figure f2 , int pictureWidth, int pictureHeight)
         {
-            for (int i = firstCoord; i < firstCoord + firstFigureWidth; i++)
+            f1.Move(pictureWidth, pictureHeight);
+            f2.Move(pictureWidth, pictureHeight);
+            int x1 = GetPoint(f1.Width, f1.X, f2.X);
+            int y1 = GetPoint(f1.Height, f1.Y, f2.Y);
+            if (x1 == -1 || y1 == -1)
+                return  true;
+            return false;
+        }
+
+        private int GetPoint(int figureLength, int firstCoord, int secondCoord)
+        {
+            for (int i = firstCoord; i < firstCoord + figureLength; i++)
             {
-                for (int k = secondCoord; k < secondCoord + secondFigureWidth; k++)
+                for (int k = secondCoord; k < secondCoord + figureLength; k++)
                     if (i == k)
                         return i;
             }
