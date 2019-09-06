@@ -514,7 +514,7 @@
 </value>
   </data>
   <data name="treeViewFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 267</value>
+    <value>190, 267</value>
   </data>
   <data name="treeViewFigures.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -628,7 +628,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="treeViewFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 149</value>
+    <value>187, 149</value>
   </data>
   <data name="treeViewFiles.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -649,7 +649,7 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="textBoxCoordinat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 29</value>
+    <value>208, 29</value>
   </data>
   <data name="textBoxCoordinat.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -658,7 +658,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBoxCoordinat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 454</value>
+    <value>229, 454</value>
   </data>
   <data name="textBoxCoordinat.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -679,7 +679,7 @@
     <value>True</value>
   </data>
   <data name="labelCoordinat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 9</value>
+    <value>205, 9</value>
   </data>
   <data name="labelCoordinat.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
