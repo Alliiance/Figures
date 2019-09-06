@@ -34,8 +34,8 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    int x = GetPoint(figure[i].Width, figure[i].X, figure[index].X);
-                    int y = GetPoint(figure[i].Height, figure[i].Y, figure[index].Y);
+                    int x = GetPointX(figure[i], figure[index]);
+                    int y = GetPointY(figure[i], figure[index]);
 
                     if (x >= 0 && y >= 0)
                     {
@@ -56,26 +56,39 @@ namespace FiguresProgram.Models
 
         }
 
-        private bool GetNextPoint(Figure f1, Figure f2 , int pictureWidth, int pictureHeight)
+        public int GetPointX(Figure figure, Figure select)
         {
-            f1.Move(pictureWidth, pictureHeight);
-            f2.Move(pictureWidth, pictureHeight);
-            int x1 = GetPoint(f1.Width, f1.X, f2.X);
-            int y1 = GetPoint(f1.Height, f1.Y, f2.Y);
-            if (x1 == -1 || y1 == -1)
-                return  true;
-            return false;
-        }
-
-        private int GetPoint(int figureLength, int firstCoord, int secondCoord)
-        {
-            for (int i = firstCoord; i < firstCoord + figureLength; i++)
+            for (int i = figure.X; i < figure.X + figure.Width; i++)
             {
-                for (int k = secondCoord; k < secondCoord + figureLength; k++)
+                for (int k = select.X; k < select.X + select.Width; k++)
                     if (i == k)
                         return i;
             }
             return -1;
         }
+
+        public int GetPointY(Figure figure, Figure select)
+        {
+            for (int i = figure.Y; i < figure.Y + figure.Height; i++)
+            {
+                for (int k = select.Y; k < select.Y + select.Height; k++)
+                    if (i == k)
+                        return i;
+            }
+            return -1;
+        }
+
+        protected bool GetNextPoint(Figure f1, Figure f2, int pictureWidth, int pictureHeight)
+        {
+            f1.Move(pictureWidth, pictureHeight);
+            f2.Move(pictureWidth, pictureHeight);
+            int x = GetPointX(f1, f2);
+            int y = GetPointY(f1, f2);
+            if (x == -1 || y == -1)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

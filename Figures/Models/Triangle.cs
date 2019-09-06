@@ -42,8 +42,8 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    int x = GetPointX(figure[i].Width, figure[i].X, figure[index].X);
-                    int y = GetPointY(figure[i].Height, figure[i].Y, figure[index].Y);
+                    int x = GetPointX(figure[i], figure[index]);
+                    int y = GetPointY(figure[i], figure[index]);
 
                     if (x >= 0 && y >= 0)
                     {
@@ -56,37 +56,45 @@ namespace FiguresProgram.Models
                         {
                             Figure f1 = (Figure)figure[i].Clone();
                             Figure f2 = (Figure)figure[index].Clone();
-                            f1.Move(pictureWidth, pictureHeight);
-                            f2.Move(pictureWidth, pictureHeight);
-                            int x1 = GetPointX(f1.Width, f1.X, f2.X);
-                            int y1 = GetPointY(f1.Height, f1.Y, f2.Y);
-                            if (x1 == -1 || y1 == -1)
-                                coordinateCondition = true;
+                            coordinateCondition = GetNextPoint(f1, f2, pictureWidth, pictureHeight);
                         }
                     }
                 }
             }
         }
-        private int GetPointX(int figureLength, int firstCoord, int secondCoord)
+
+        public int GetPointX(Figure figure, Figure select)
         {
-            for (int i = firstCoord; i < firstCoord + figureLength; i++)
+            for (int i = figure.X; i < figure.X + figure.Width; i++)
             {
-                for (int k = secondCoord; k < secondCoord + figureLength; k++)
+                for (int k = select.X; k < select.X + select.Width; k++)
                     if (i == k)
                         return i;
             }
             return -1;
         }
 
-        private int GetPointY(int figureLength, int firstCoord, int secondCoord)
+        public int GetPointY(Figure figure, Figure select)
         {
-            for (int i = firstCoord; i < firstCoord + figureLength; i++)
+            for (int i = figure.Y; i < figure.Y + figure.Height; i++)
             {
-                for (int k = secondCoord; k < secondCoord + (i - firstCoord); k++)
+                for (int k = select.Y; k < select.Y + (i - figure.Y); k++)
                     if (i == k)
                         return i;
             }
             return -1;
+        }
+
+        protected bool GetNextPoint(Figure f1, Figure f2, int pictureWidth, int pictureHeight)
+        {
+            f1.Move(pictureWidth, pictureHeight);
+            f2.Move(pictureWidth, pictureHeight);
+            int x = GetPointX(f1, f2);
+            int y = GetPointY(f1, f2);
+            if (x == -1 || y == -1)
+                return true;
+            else
+                return false;
         }
     }
 }

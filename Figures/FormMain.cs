@@ -365,6 +365,7 @@ namespace FiguresProgram
                                      $"\r\n{Strings.Coordinate}-X : {x}," +
                                      $"\r\n{Strings.Coordinate}-Y : {y}." +
                                      $"\r\n{new string('_', 20)} \r\n";
+
             using (SoundPlayer beep = new SoundPlayer("../../Sounds/beep.wav"))
             {
                 beep.Play();

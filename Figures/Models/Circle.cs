@@ -33,8 +33,8 @@ namespace FiguresProgram.Models
             {
                 if (figure[i].Name == Name && i != index)
                 {
-                    int x = GetPoint(figure[i].Width, figure[i].X, figure[index].X);
-                    int y = GetPoint(figure[i].Height,figure[i].Y, figure[index].Y);
+                    int x = GetPointX(figure[i], figure[index]);
+                    int y = GetPointY(figure[i], figure[index]);
 
                     if (x >= 0 && y >= 0)
                     {
@@ -47,28 +47,48 @@ namespace FiguresProgram.Models
                         {
                             Figure f1 = (Figure)figure[i].Clone();
                             Figure f2 = (Figure)figure[index].Clone();
-                            f1.Move(pictureWidth, pictureHeight);
-                            f2.Move(pictureWidth, pictureHeight);
-                            int x1 = GetPoint(f1.Width, f1.X, f2.X);
-                            int y1 = GetPoint(f1.Height,f1.Y, f2.Y);
-                            if (x1 == -1 || y1 == -1)
-                                coordinateCondition = true;
+                            coordinateCondition = GetNextPoint(f1, f2, pictureWidth, pictureHeight);
                         }
                     }
                 }
             }
         }
-        private int GetPoint(int figureLength, int firstCoord, int secondCoord)
+
+        public int GetPointX(Figure figure, Figure select)
         {
-            int half = figureLength / 2;
-            int centerPoint = firstCoord + half;
-            for (int i = secondCoord - half / 2; i < secondCoord + figureLength + half / 2; i++)
+            int half = figure.Width / 2;
+            int centerPoint = figure.X + half;
+            for (int i = select.X - half / 2; i < select.X + figure.Width + half / 2; i++)
+             {
+                 if (i == centerPoint)
+                     return i;
+             }
+            return -1;
+        }
+
+        public int GetPointY(Figure figure, Figure select)
+        {
+            int half = figure.Height / 2;
+            int centerPoint = figure.Y + half;
+            for (int i = select.Y - half / 2; i < select.Y + figure.Height + half / 2; i++)
             {
-                    if (i == centerPoint)
-                        return i;
+                if (i == centerPoint)
+                    return i;
             }
             return -1;
-
         }
+
+        protected bool GetNextPoint(Figure f1, Figure f2, int pictureWidth, int pictureHeight)
+        {
+            f1.Move(pictureWidth, pictureHeight);
+            f2.Move(pictureWidth, pictureHeight);
+            int x = GetPointX(f1, f2);
+            int y = GetPointY(f1, f2);
+            if (x == -1 || y == -1)
+                return true;
+            else
+                return false;
+        }
+
     }
 }
