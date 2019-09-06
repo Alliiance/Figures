@@ -16,28 +16,16 @@ namespace FiguresProgram.Models
     [KnownType(typeof(Triangle))]
     public abstract class Figure : ICloneable
     {
-        public object Clone()
-        {
-            return MemberwiseClone();
-        }
-
         public delegate void PointDelegate(string name, int x, int y);
 
         [field: NonSerialized]
         public event PointDelegate MyPoint;
-
-        protected void InvokeEvent(string name, int x, int y)
-        {
-            MyPoint.Invoke(name, x, y);
-        }
 
         [XmlIgnore]
         public bool coordinateCondition = true;
 
         [XmlIgnore]
         public Figure figureEvent;
-
-        abstract public void GetPoints(List<Figure> figure, int indexElement, int pictureWidth, int pictureHeight);
 
         [DataMember]
         public int X { get; set; }
@@ -64,6 +52,8 @@ namespace FiguresProgram.Models
         public bool Condition { get; set; }
 
         abstract public void Draw(Graphics graphics);
+        abstract public int GetPointX(Figure f1, Figure f2);
+        abstract public int GetPointY(Figure f1, Figure f2);
 
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
@@ -102,12 +92,60 @@ namespace FiguresProgram.Models
             }
         }
 
+        public virtual void GetPoints(List<Figure> figure, int index, int pictureWidth, int pictureHeight)
+        {
+            for (int i = 0; i < figure.Count; i++)
+            {
+                if (figure[i].Name == Name && i != index)
+                {
+                    int x = GetPointX(figure[i], figure[index]);
+                    int y = GetPointY(figure[i], figure[index]);
+
+                    if (x >= 0 && y >= 0)
+                    {
+                        if (coordinateCondition)
+                        {
+                            InvokeEvent(figure[index].Name, x, y);
+                            coordinateCondition = false;
+                        }
+                        else
+                        {
+                            Figure f1 = (Figure)figure[i].Clone();
+                            Figure f2 = (Figure)figure[index].Clone();
+                            coordinateCondition = GetNextPoint(f1, f2, pictureWidth, pictureHeight);
+                        }
+                    }
+                }
+            }
+        }
+
+        protected bool GetNextPoint(Figure f1, Figure f2, int pictureWidth, int pictureHeight)
+        {
+            f1.Move(pictureWidth, pictureHeight);
+            f2.Move(pictureWidth, pictureHeight);
+            int x = GetPointX(f1, f2);
+            int y = GetPointY(f1, f2);
+            if (x == -1 || y == -1)
+                return true;
+            else
+                return false;
+        }
+
         public bool IsEventNull()
         {
             if (MyPoint != null)
                 return true;
             else
                 return false;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
+        protected void InvokeEvent(string name, int x, int y)
+        {
+            MyPoint.Invoke(name, x, y);
         }
     }
 }
