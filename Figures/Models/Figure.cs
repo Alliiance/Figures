@@ -57,6 +57,10 @@ namespace FiguresProgram.Models
 
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
+            if (X > pictureWidth || Y > pictureHeight)
+                throw new Exception($"Имя фигусы {Name}, координаты : X {X}, координаты : Y {Y}");
+
+
             if (Condition)
             {
                 if (X == 0)

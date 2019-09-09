@@ -158,8 +158,19 @@ namespace FiguresProgram
                 {
                     foreach (Figure figure in figures[i])
                     {
-                        figure.Move(pictureBoxWidth, pictureBoxHeight);
-                        figure.Draw(graphics);
+                        try
+                        {
+                            figure.Move(pictureBoxWidth, pictureBoxHeight);
+                        }
+                        catch (Exception ex)
+                        {
+
+                        var exx = ex;
+                        }
+                        finally
+                        {
+                            figure.Draw(graphics);
+                        }
                     }
                 }
             }
@@ -364,7 +375,7 @@ namespace FiguresProgram
             textBoxCoordinat.Text += $"\r\n{Strings.TypeFigure}: {name}" +
                                      $"\r\n{Strings.Coordinate}-X : {x}," +
                                      $"\r\n{Strings.Coordinate}-Y : {y}." +
-                                     $"\r\n{new string('_', 20)} \r\n";
+                                     $"\r\n{new string('_', 25)} \r\n";
 
             using (SoundPlayer beep = new SoundPlayer("../../Sounds/beep.wav"))
             {
