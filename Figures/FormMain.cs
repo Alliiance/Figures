@@ -164,8 +164,13 @@ namespace FiguresProgram
                         }
                         catch (Exception ex)
                         {
-
-                        var exx = ex;
+                            using (StreamWriter fs = new StreamWriter("log.txt", true, System.Text.Encoding.Default))
+                            {
+                                fs.WriteLine(ex.Message);
+                            }
+                            int posX = rand.GetRandomX(pictureBoxWidth);
+                            int posY = rand.GetRandomY(pictureBoxHeight);
+                            figure.NewСorrectСoordinates(posX, posY);
                         }
                         finally
                         {
@@ -393,19 +398,10 @@ namespace FiguresProgram
                 int indexElement = 0;
                 foreach (var item in figure)
                 {
-                    try
-                    {
-                        if (item.IsEventNull())
-                            item.GetPoints(figure, indexElement, pictureBoxWidth, pictureBoxHeight);
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                    finally
-                    {
-                        indexElement++;
-                    }
+                    if (item.IsEventNull())
+                        item.GetPoints(figure, indexElement, pictureBoxWidth, pictureBoxHeight);
+
+                    indexElement++;
                 }
             }
         }

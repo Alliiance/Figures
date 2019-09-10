@@ -58,7 +58,7 @@ namespace FiguresProgram.Models
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
             if (X > pictureWidth || Y > pictureHeight)
-                throw new Exception($"Имя фигусы {Name}, координаты : X {X}, координаты : Y {Y}");
+                throw new Exception($"The coordinate is outside, Name : {Name}, coordinate X : {X}, coordinate Y : {Y};");
 
 
             if (Condition)
@@ -150,6 +150,12 @@ namespace FiguresProgram.Models
         protected void InvokeEvent(string name, int x, int y)
         {
             MyPoint.Invoke(name, x, y);
+        }
+
+        public void NewСorrectСoordinates(int newX , int newY)
+        {
+            X = newX;
+            Y = newY;
         }
     }
 }
