@@ -58,7 +58,7 @@ namespace FiguresProgram.Models
         public virtual void Move(int pictureWidth, int pictureHeight)
         {
             if (X > pictureWidth || Y > pictureHeight)
-                throw new Exception($"The coordinate is outside, Name : {Name}, coordinate X : {X}, coordinate Y : {Y};");
+                throw new ArgumentOutOfRangeException($" {Name}, coordinate X : {X}, coordinate Y : {Y};");
 
 
             if (Condition)

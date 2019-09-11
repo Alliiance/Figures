@@ -162,7 +162,7 @@ namespace FiguresProgram
                         {
                             figure.Move(pictureBoxWidth, pictureBoxHeight);
                         }
-                        catch (Exception ex)
+                        catch (ArgumentOutOfRangeException ex)
                         {
                             using (StreamWriter fs = new StreamWriter("log.txt", true, System.Text.Encoding.Default))
                             {
