@@ -24,7 +24,6 @@ namespace FiguresProgram
         int pictureBoxHeight;
         readonly CoordinatesRandom rand = new CoordinatesRandom();
         object locker = new object();
-        object locker2 = new object();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -52,8 +51,11 @@ namespace FiguresProgram
                 int height = 50;
                 int posX = rand.GetRandomX(pictureBoxWidth - width);
                 int posY = rand.GetRandomY(pictureBoxHeight - height);
-                Circle circle = new Circle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
-                figures[0].Add(circle);
+                lock (locker)
+                {
+                    Circle circle = new Circle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
+                    figures[0].Add(circle);
+                }
                 AddTtreeViewFigure(name);
             }
 
@@ -64,8 +66,11 @@ namespace FiguresProgram
                 int height = 50;
                 int posX = rand.GetRandomX(pictureBoxWidth - width);
                 int posY = rand.GetRandomY(pictureBoxHeight - height);
-                Models.Rectangle rectangle = new Models.Rectangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
-                figures[1].Add(rectangle);
+                lock (locker)
+                {
+                    Models.Rectangle rectangle = new Models.Rectangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
+                    figures[1].Add(rectangle);
+                }
                 AddTtreeViewFigure(name);
             }
 
@@ -76,8 +81,11 @@ namespace FiguresProgram
                 int height = 50;
                 int posX = rand.GetRandomX(pictureBoxWidth - width);
                 int posY = rand.GetRandomY(pictureBoxHeight - height);
-                Triangle triangle = new Triangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
-                figures[2].Add(triangle);
+                lock (locker)
+                {
+                    Triangle triangle = new Triangle(name, posX, posY, width, height, Direction.Left, Direction.Bottom);
+                    figures[2].Add(triangle);
+                }
                 AddTtreeViewFigure(name);
             }
 
@@ -155,6 +163,7 @@ namespace FiguresProgram
 
             private void PictureBoxFigure_Paint(object sender, PaintEventArgs e)
             {
+
                 graphics = e.Graphics;
                 for (int i = 0; i < figures.Count; i++)
                 {
@@ -176,12 +185,14 @@ namespace FiguresProgram
                         }
                         finally
                         {
-                             //figure.Draw(graphics);
-                            Thread thread = new Thread(() => figure.Draw(graphics));
-                            thread.Start();
+                            figure.Draw(graphics);
+                            //Thread thread = new Thread(() => figure.Draw(graphics));
+                            //thread.Start();
                         }
                     }
                 }
+
+                EventFigures();
             }
 
         #endregion
@@ -351,7 +362,7 @@ namespace FiguresProgram
 
         #endregion
 
-        #region Event buttons
+        #region Event figures
 
         private void AddEvent_Click(object sender, EventArgs e)
         {
@@ -392,11 +403,8 @@ namespace FiguresProgram
             }
         }
 
-        #endregion
-
-        private void Timer_Tick(object sender, EventArgs e)
+        private void EventFigures()
         {
-            pictureBoxFigure.Refresh();
             foreach (var figure in figures)
             {
                 int indexElement = 0;
@@ -408,6 +416,13 @@ namespace FiguresProgram
                     indexElement++;
                 }
             }
+        }
+
+        #endregion
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            pictureBoxFigure.Refresh();
         }
     }
 }
