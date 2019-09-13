@@ -55,7 +55,11 @@ namespace FiguresProgram.Models
         abstract public int GetPointX(Figure f1, Figure f2);
         abstract public int GetPointY(Figure f1, Figure f2);
 
-        public virtual void Move(int pictureWidth, int pictureHeight)
+
+        object locker1 = new object();
+        object locker2 = new object();
+
+        public void Move(int pictureWidth, int pictureHeight)
         {
             if (X > pictureWidth || Y > pictureHeight)
                 throw new ArgumentOutOfRangeException($" {Name}, coordinate X : {X}, coordinate Y : {Y};");
@@ -96,7 +100,7 @@ namespace FiguresProgram.Models
             }
         }
 
-        public virtual void GetPoints(List<Figure> figure, int index, int pictureWidth, int pictureHeight)
+        public void GetPoints(List<Figure> figure, int index, int pictureWidth, int pictureHeight)
         {
             for (int i = 0; i < figure.Count; i++)
             {
@@ -125,22 +129,25 @@ namespace FiguresProgram.Models
 
         protected bool GetNextPoint(Figure f1, Figure f2, int pictureWidth, int pictureHeight)
         {
+            bool IsItNextPoint = false;
+
             f1.Move(pictureWidth, pictureHeight);
             f2.Move(pictureWidth, pictureHeight);
             int x = GetPointX(f1, f2);
             int y = GetPointY(f1, f2);
             if (x == -1 || y == -1)
-                return true;
-            else
-                return false;
+                IsItNextPoint = true;
+            
+            return IsItNextPoint;
         }
 
         public bool IsEventNull()
         {
+            bool IsItPoint = false;
             if (MyPoint != null)
-                return true;
-            else
-                return false;
+                IsItPoint = true;
+
+            return IsItPoint;
         }
 
         public object Clone()

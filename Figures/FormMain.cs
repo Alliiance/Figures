@@ -17,12 +17,14 @@ using System.Media;
 namespace FiguresProgram
 {
     
-    public partial class FiguresForm : Form
+    public partial class FiguresForm : Form , IDisposable
     {
         bool isFormLoaded = false;
         int pictureBoxWidth;
         int pictureBoxHeight;
         readonly CoordinatesRandom rand = new CoordinatesRandom();
+        object locker = new object();
+        object locker2 = new object();
 
         Graphics graphics;
         List<List<Figure>> figures = new List<List<Figure>>
@@ -174,7 +176,9 @@ namespace FiguresProgram
                         }
                         finally
                         {
-                            figure.Draw(graphics);
+                             //figure.Draw(graphics);
+                            Thread thread = new Thread(() => figure.Draw(graphics));
+                            thread.Start();
                         }
                     }
                 }
